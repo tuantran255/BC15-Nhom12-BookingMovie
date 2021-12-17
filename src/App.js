@@ -1,12 +1,17 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { Router, Switch } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import { HomeTemplate } from "./templates/HomeTemplate/HomeTemplate";
+
+export const history = createBrowserHistory();
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Switch>
-        <Route exact path="/" component />
+        <HomeTemplate path="/" Component={Home} />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 
