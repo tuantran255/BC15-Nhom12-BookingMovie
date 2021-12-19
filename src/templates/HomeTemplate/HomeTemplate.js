@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Route } from "react-router-dom";
+import Header from "./Layout/Header/Header";
 
 export const HomeTemplate = (props) => {
   let { Component, path } = props;
@@ -11,9 +12,11 @@ export const HomeTemplate = (props) => {
       render={(propsRoute) => {
         return (
           <Fragment>
-            <h1 className="text-center text-white bg-slate-400">Header component</h1>
+            <Header />
             <Component {...propsRoute} />
-            <footer className="text-center text-white bg-red-400">Footer component</footer>
+            <footer className="text-center text-white bg-red-400">
+              Footer component
+            </footer>
           </Fragment>
         );
       }}
