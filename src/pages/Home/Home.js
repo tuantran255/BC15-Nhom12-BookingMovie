@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Fragment } from "react";
+import HomeCarousel from "./HomeCarousel";
 
 export default function Home(props) {
-    return (
-        <div>
-            Home component
-        </div>
-    )
+  return (
+    <Fragment>
+      <HomeCarousel />
+    </Fragment>
+  );
 }
