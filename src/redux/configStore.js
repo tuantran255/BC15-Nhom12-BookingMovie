@@ -1,10 +1,9 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import reduxThunk from "redux-thunk";
-import { BannerReducer } from "./reducers/BannerReducer";
+import { configureStore } from "@reduxjs/toolkit";
+import bannerReducer from "./slices/bannerSlice";
 
-const rootReducer = combineReducers({
-  //State
-  BannerReducer,
+
+export const store = configureStore({
+  reducer: {
+    banner: bannerReducer,
+  },
 });
-
-export const store = createStore(rootReducer, applyMiddleware(reduxThunk));

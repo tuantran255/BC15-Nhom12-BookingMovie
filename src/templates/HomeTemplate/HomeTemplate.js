@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Route } from "react-router-dom";
+import Footer from "./Layout/Footer/Footer";
 import Header from "./Layout/Header/Header";
 
 export const HomeTemplate = (props) => {
@@ -14,9 +15,7 @@ export const HomeTemplate = (props) => {
           <Fragment>
             <Header />
             <Component {...propsRoute} />
-            <footer className="text-center text-white bg-red-400">
-              Footer component
-            </footer>
+            <Footer />
           </Fragment>
         );
       }}
