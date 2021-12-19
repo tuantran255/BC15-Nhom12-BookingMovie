@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
-import HomeCarousel from "./HomeCarousel";
+import React from 'react'
 
 export default function Home(props) {
-  return (
-    <Fragment>
-      <HomeCarousel />
-    </Fragment>
-  );
+    return (
+        <div>
+            Home component
+        </div>
+    )
 }
