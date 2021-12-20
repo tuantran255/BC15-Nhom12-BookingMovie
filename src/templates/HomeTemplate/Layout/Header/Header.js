@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <header className="h-15 bg-white text-coolGray-800 shadow-lg fixed z-50 w-full opacity-95">
       <div className="flex justify-between mx-auto">
