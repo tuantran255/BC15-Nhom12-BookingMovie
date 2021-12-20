@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useMemo } from "react";
 import { Navigation, Pagination, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import "swiper/css/pagination"
 import CarouselStyle from "./CarouselStyle.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAPIBanner, getBanner } from "../../redux/slices/bannerSlice";
@@ -13,7 +12,6 @@ import Fancybox from "../../components/Fancybox/Fancybox";
 
 export default function HomeCarousel() {
   let { arrBanner } = useSelector(getBanner);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,11 +33,17 @@ export default function HomeCarousel() {
             </a>
             <Fancybox options={{ infinite: false }}>
               <a
-                href="https://youtu.be/As72eNoxRac"
+                href={
+                  banner.maPhim === 1283
+                    ? "https://youtu.be/kBY2k3G6LsM"
+                    : banner.maPhim === 1282
+                    ? "https://youtu.be/8jraVtX821Q"
+                    : banner.trailer
+                }
                 data-fancybox={banner.maPhim}
                 className={CarouselStyle.buttonPlay}
               ></a>
-          </Fancybox>
+            </Fancybox>
           </div>
         </SwiperSlide>
       );
@@ -51,15 +55,16 @@ export default function HomeCarousel() {
         className="mySwiper"
         // install Swiper modules
         modules={[Navigation, Pagination, Autoplay, A11y]}
-        // autoplay={{
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: true,
+        }}
         slidesPerView={1}
         navigation={true}
         cssMode={true}
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
+        pagination={{
+          clickable: true,
+        }}
       >
         {renderBanner()}
       </Swiper>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer() {
+export default function Footer(props) {
   return (
     <div className="p-5" style={{ backgroundColor: "#222" }}>
       <div className="mainMaxWidth mx-auto ">

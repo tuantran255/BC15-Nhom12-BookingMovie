@@ -22,6 +22,10 @@
   border-right: none;
 }
 
+.carouselBox {
+  height: 100%;
+}
+
 .carouselBox:hover .buttonPlay {
   opacity: 1;
   visibility: visible;
