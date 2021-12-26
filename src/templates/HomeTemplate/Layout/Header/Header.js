@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export default function Header(props) {
   return (
     <header className="h-15 bg-white text-coolGray-800 shadow-lg fixed z-50 w-full opacity-95">
       <div className="flex justify-between mx-auto">
@@ -15,7 +15,7 @@ export default function Header() {
           <li className="flex">
             <a
               href="#"
-              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500"
+              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500 font-medium"
             >
               Lịch chiếu
             </a>
@@ -23,7 +23,7 @@ export default function Header() {
           <li className="flex">
             <a
               href="#"
-              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500"
+              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500 font-medium"
             >
               Cụm rạp
             </a>
@@ -31,7 +31,7 @@ export default function Header() {
           <li className="flex">
             <a
               href="#"
-              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500"
+              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500 font-medium"
             >
               Tin tức
             </a>
@@ -39,7 +39,7 @@ export default function Header() {
           <li className="flex">
             <a
               href="#"
-              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500"
+              className="flex items-center mx-2 border-b-2 border-transparent text-sm text-black hover:text-red-500 font-medium"
             >
               Ứng dụng
             </a>
@@ -53,8 +53,11 @@ export default function Header() {
               className="rounded-full"
               width="30px"
             />
-            <span className="text-xs border-r-2 text-gray-400 font-medium p-2">
+            <span className="text-sm border-r-2 text-gray-400 font-medium p-2">
               Đăng nhập
+            </span>
+            <span className="text-sm text-gray-400 font-medium p-2">
+              Đăng ký
             </span>
           </a>
         </div>
