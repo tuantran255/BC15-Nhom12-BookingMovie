@@ -1,5 +1,11 @@
-import React from "react";
-
+import React, { Fragment } from "react";
+import ItemDetail from "./ItemDetail";
+import ListDetail from "./ListDetail";
 export default function Detail(props) {
-  return <div>Detail</div>;
+  return (
+    <Fragment>
+      <ItemDetail />
+      <ListDetail />
+    </Fragment>
+  );
 }
