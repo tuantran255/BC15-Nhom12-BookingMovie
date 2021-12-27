@@ -4,8 +4,10 @@ import ListDetail from "./ListDetail";
 export default function Detail(props) {
   return (
     <Fragment>
-      <ItemDetail />
-      <ListDetail />
+      <div>
+        <ItemDetail />
+        <ListDetail />
+      </div>
     </Fragment>
   );
 }
