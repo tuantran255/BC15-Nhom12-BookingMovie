@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter history={history}>
       <Switch>
         <HomeTemplate exact path="/" Component={Home} />
-        <HomeTemplate exact path="/detail" Component={Detail} />
+        <HomeTemplate exact path="/detail/:id" Component={Detail} />
       </Switch>
     </BrowserRouter>
   );

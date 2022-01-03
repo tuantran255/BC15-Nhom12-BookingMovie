@@ -1,4 +1,30 @@
 import React from "react";
+import cgv from "../../../../assets/images/icon-partner/cgv.png";
+import bhd from "../../../../assets/images/icon-partner/bhd.png";
+import galaxycine from "../../../../assets/images/icon-partner/galaxycine.png";
+import cinestar from "../../../../assets/images/icon-partner/cinestar.png";
+import megags from "../../../../assets/images/icon-partner/megags.png";
+import bt from "../../../../assets/images/icon-partner/bt.jpg";
+import dongdacinema from "../../../../assets/images/icon-partner/dongdacinema.png";
+import lotte from "../../../../assets/images/icon-partner/lotte.png";
+import TOUCH from "../../../../assets/images/icon-partner/TOUCH.png";
+import cnx from "../../../../assets/images/icon-partner/cnx.jpg";
+import STARLIGHT from "../../../../assets/images/icon-partner/STARLIGHT.png";
+import dcine from "../../../../assets/images/icon-partner/dcine.png";
+import zalopay_icon from "../../../../assets/images/icon-partner/zalopay_icon.png";
+import payoo from "../../../../assets/images/icon-partner/payoo.jpg";
+import VCB from "../../../../assets/images/icon-partner/VCB.png";
+import AGRIBANK from "../../../../assets/images/icon-partner/AGRIBANK.png";
+import VIETTINBANK from "../../../../assets/images/icon-partner/VIETTINBANK.png";
+import IVB from "../../../../assets/images/icon-partner/IVB.png";
+import img123go from "../../../../assets/images/icon-partner/123go.png";
+import laban from "../../../../assets/images/icon-partner/laban.png";
+import appleLogo from "../../../../assets/images/apple-logo.png";
+import androidLogo from "../../../../assets/images/android-logo.png";
+import facebookLogo from "../../../../assets/images/facebook-logo.png";
+import zaloLogo from "../../../../assets/images/zalo-logo.png";
+import zionLogo from "../../../../assets/images/zion-logo.jpg";
+import boCongThuongLogo from "../../../../assets/images/bo-cong-thuong.png";
 
 export default function Footer(props) {
   return (
@@ -26,84 +52,84 @@ export default function Footer(props) {
             <p className="text-white text-xs">Đối tác</p>
             <div className="grid grid-cols-5 gap-y-4 gap-x-0 text-center">
               <a href="https://www.cgv.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/cgv.png" className="w-8 bg-white rounded-full" alt="logo-partner" />
+                <img src={cgv} className="w-8 bg-white rounded-full" alt="logo-partner" />
               </a>
               <a href="http://bhdstar.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/bhd.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={bhd} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://galaxycine.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/galaxycine.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={galaxycine} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://cinestar.com.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/cinestar.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={cinestar} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://lottecinemavn.com/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/lotte.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={lotte} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a
                 href="https://www.megagscinemas.vn/"
                 target="_blank"
                 className="transition duration-200 hover:opacity-80"
               >
-                <img src="./images/icon-partner/megags.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={megags} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a
                 href="https://www.betacineplex.vn/"
                 target="_blank"
                 className="transition duration-200 hover:opacity-80"
               >
-                <img src="./images/icon-partner/bt.jpg" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={bt} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://ddcinema.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/dongdacinema.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={dongdacinema} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="https://touchcinema.com/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/TOUCH.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={TOUCH} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="https://cinemaxvn.com/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/cnx.jpg" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={cnx} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://starlight.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/STARLIGHT.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={STARLIGHT} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="https://www.dcine.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/dcine.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={dcine} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="https://zalopay.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/zalopay_icon.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={zalopay_icon} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="https://www.payoo.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/payoo.jpg" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={payoo} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a
                 href="https://www.vietcombank.com.vn/"
                 target="_blank"
                 className="transition duration-200 hover:opacity-80"
               >
-                <img src="./images/icon-partner/VCB.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={VCB} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a
                 href="http://www.agribank.com.vn/"
                 target="_blank"
                 className="transition duration-200 hover:opacity-80"
               >
-                <img src="./images/icon-partner/AGRIBANK.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={AGRIBANK} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="https://www.vietinbank.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/VIETTINBANK.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={VIETTINBANK} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a
                 href="https://www.indovinabank.com.vn/"
                 target="_blank"
                 className="transition duration-200 hover:opacity-80"
               >
-                <img src="./images/icon-partner/IVB.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={IVB} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://123go.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/123go.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={img123go} className="w-8 rounded-full" alt="logo-partner" />
               </a>
               <a href="http://laban.vn/" target="_blank" className="transition duration-200 hover:opacity-80">
-                <img src="./images/icon-partner/laban.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img src={laban} className="w-8 rounded-full" alt="logo-partner" />
               </a>
             </div>
           </div>
@@ -117,10 +143,10 @@ export default function Footer(props) {
                     href="https://apps.apple.com/vn/app/tix-%C4%91%E1%BA%B7t-v%C3%A9-nhanh-nh%E1%BA%A5t/id615186197"
                     className="mr-4"
                   >
-                    <img src="./images/apple-logo.png" alt="apple-logo" className="w-7" />
+                    <img src={appleLogo} alt="apple-logo" className="w-7" />
                   </a>
                   <a target="_blank" href="https://play.google.com/store/apps/details?id=vn.com.vng.phim123">
-                    <img src="./images/android-logo.png" alt="androi-logo" className="w-7" />
+                    <img src={androidLogo} alt="androi-logo" className="w-7" />
                   </a>
                 </div>
               </div>
@@ -128,10 +154,10 @@ export default function Footer(props) {
                 <p className="text-white text-xs">SOCIAL</p>
                 <div className="flex items-center justify-center">
                   <a target="_blank" href="https://www.facebook.com/tix.vn/" className="mr-4">
-                    <img src="./images/facebook-logo.png" alt="facebook-logo" className="w-8" />
+                    <img src={facebookLogo} alt="facebook-logo" className="w-8" />
                   </a>
                   <a target="_blank" href="https://zalo.me/tixdatve">
-                    <img src="./images/zalo-logo.png" alt="zalo-logo" className="w-8" />
+                    <img src={zaloLogo} alt="zalo-logo" className="w-8" />
                   </a>
                 </div>
               </div>
@@ -140,7 +166,7 @@ export default function Footer(props) {
         </div>
         <hr className="my-5 opacity-30" />
         <div className="grid grid-cols-12">
-          <img src="./images/zion-logo.jpg" alt="zion-logo" className="rounded-md" />
+          <img src={zionLogo} alt="zion-logo" className="rounded-md" />
           <div className="col-span-9 px-4">
             <p className="text-white text-xs mb-2">TIX SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION</p>
             <p
@@ -174,7 +200,7 @@ export default function Footer(props) {
           </div>
           <div className="col-span-2">
             <a href="http://online.gov.vn/Home/WebDetails/62782" target="_blank" className="flex justify-end">
-              <img src="./images/bo-cong-thuong.png" alt="bo-cong-thuong-icon" className="w-10/12" />
+              <img src={boCongThuongLogo} alt="bo-cong-thuong-icon" className="w-10/12" />
             </a>
           </div>
         </div>
