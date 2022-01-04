@@ -1,72 +1,52 @@
 import React from "react";
-import { Tabs } from "antd";
-import ListItemTabsDetail from "./ListItemTabsDetail";
-import bhd from "../../assets/images/icon-partner/bhd.png";
-import cgv from "../../assets/images/icon-partner/cgv.png";
-import cinestar from "../../assets/images/icon-partner/cinestar.png";
-import galaxycine from "../../assets/images/icon-partner/galaxycine.png";
-import lotte from "../../assets/images/icon-partner/lotte.png";
+import { Button, Divider, Tabs } from "antd";
+import { useSelector } from "react-redux";
+import moment from "moment";
 
 const { TabPane } = Tabs;
 export default function TabsDetail(props) {
+  const { filmDetail } = useSelector(state => state.detail);
+  const { heThongRapChieu } = filmDetail;
+
   return (
     <div>
-      <Tabs tabPosition="left" type="card">
-        <TabPane
-          tab={
-            <div className="flex items-center justify-center">
-              <img src={bhd} alt="" className="w-14 h-14" />
-              <h3 className="ml-2 text-sm text-black hover:text-red-500 font-medium">BHD Star Cineplex</h3>
-            </div>
-          }
-          key="1"
-        >
-          <ListItemTabsDetail />
-        </TabPane>
-        <TabPane
-          tab={
-            <div className="flex items-center justify-center">
-              <img src={cgv} alt="" className="w-14 h-14" />
-              <h3 className="ml-2 text-sm text-black hover:text-red-500 font-medium">BHD Star Cineplex</h3>
-            </div>
-          }
-          key="2"
-        >
-          <ListItemTabsDetail />
-        </TabPane>
-        <TabPane
-          tab={
-            <div className="flex items-center justify-center">
-              <img src={cinestar} alt="" className="w-14 h-14" />
-              <h3 className="ml-2 text-sm text-black hover:text-red-500 font-medium">BHD Star Cineplex</h3>
-            </div>
-          }
-          key="3"
-        >
-          <ListItemTabsDetail />
-        </TabPane>
-        <TabPane
-          tab={
-            <div className="flex items-center justify-center">
-              <img src={galaxycine} alt="" className="w-14 h-14" />
-              <h3 className="ml-2 text-sm text-black hover:text-red-500 font-medium">BHD Star Cineplex</h3>
-            </div>
-          }
-          key="4"
-        >
-          <ListItemTabsDetail />
-        </TabPane>
-        <TabPane
-          tab={
-            <div className="flex items-center justify-center">
-              <img src={lotte} alt="" className="w-14 h-14" />
-              <h3 className="ml-2 text-sm text-black hover:text-red-500 font-medium">BHD Star Cineplex</h3>
-            </div>
-          }
-          key="4"
-        >
-          <ListItemTabsDetail />
-        </TabPane>
+      <Tabs tabPosition="left" type="card" defaultActiveKey="1" centered>
+        {heThongRapChieu?.map((cumRap, index) => {
+          console.log(cumRap);
+          return (
+            <TabPane
+              tab={
+                <div className="flex items-center justify-center">
+                  <img src={cumRap.logo} alt="" className="w-14 h-14" />
+                  <h3 className="ml-2 text-sm text-black hover:text-red-400 font-medium">{cumRap.maHeThongRap}</h3>
+                </div>
+              }
+              key={index}
+            >
+              {cumRap.cumRapChieu?.map((rapChieu, index) => {
+                return (
+                  <div className="mb-5 mr-5" key={index}>
+                    <Divider orientation="left ">
+                      <h1 className="text-2xl text-left">{rapChieu.tenCumRap}</h1>
+                      <h3>{`Địa chỉ: ${rapChieu.diaChi}`}</h3>
+                    </Divider>
+                    <div className="grid grid-cols-3 gap-10">
+                      {rapChieu.lichChieuPhim?.map((gioChieu, index) => {
+                        return (
+                          <Button danger shape="round" key={index}>
+                            <span>{moment(gioChieu.ngayChieuGioChieu).format("hh:mm A")}</span>
+                            <span>~</span>
+                            <span>{moment(gioChieu.ngayChieuGioChieu).format("L")}</span>
+                          </Button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </TabPane>
+          );
+        })}
       </Tabs>
     </div>
   );

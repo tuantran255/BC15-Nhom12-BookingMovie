@@ -14,7 +14,7 @@ export const api = axios.create({
 });
 
 api.interceptors.request.use(
-  (config) => {
+  config => {
     config.headers = {
       ...config.headers,
       [KEY_TOKEN_CYBERSOFT]: TOKEN_CYBERSOFT, //Qui định của cybersoft tất cả mọi request
@@ -22,7 +22,7 @@ api.interceptors.request.use(
     };
     return config;
   },
-  (errors) => {
+  errors => {
     return Promise.reject(errors);
   }
 );
