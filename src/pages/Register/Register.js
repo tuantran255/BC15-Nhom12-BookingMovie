@@ -1,7 +1,14 @@
+import Form from "antd/lib/form/Form";
 import React from "react";
-
+import { NavLink } from "react-router-dom";
+import show from "../../assets/images/show.png";
+import hide from "../../assets/images/hide.png";
 import logoAvatar from "../../assets/images/user-regular.svg";
+import { useState } from "react";
+
 export default function Register() {
+  let [showPass, setShowPass] = useState(false);
+  let [showRePass, setShowRePass] = useState(false);
   return (
     <div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-96 h-3/5 rounded-xl">
@@ -12,7 +19,7 @@ export default function Register() {
                 <img className="mx-auto h-12 " src={logoAvatar} alt="Workflow" style={{ color: "white" }} />
                 <h2 className="mt-3 text-center text-2xl font-extrabold text-gray-900">Đăng Kí</h2>
               </div>
-              <form className="mt-2 space-y-6">
+              <Form className="mt-2 space-y-6">
                 <div className="rounded-md shadow-sm -space-y-px">
                   <div>
                     <label className="sr-only">Tài khoản</label>
@@ -24,20 +31,52 @@ export default function Register() {
                   <br />
                   <div>
                     <label className="sr-only mt-5">Mật khẩu</label>
-                    <input
-                      type="password"
-                      className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
-                      placeholder="Mật Khẩu"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showPass ? "type" : "password"}
+                        className="appearance-none  block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
+                        placeholder="Mật Khẩu"
+                      />
+                      <button
+                        className="absolute top-1/2  transform  -translate-y-1/2 right-2"
+                        onClick={() => {
+                          setShowPass(!showPass);
+                        }}
+                      >
+                        {
+                          <img
+                            src={showPass ? show : hide}
+                            alt=""
+                            className="w-8 h-8 rounded-full px-2 py-2 hover:bg-gray-400"
+                          />
+                        }
+                      </button>
+                    </div>
                   </div>
                   <br />
                   <div>
                     <label className="sr-only mt-5">Nhập lại mật khẩu</label>
-                    <input
-                      type="password"
-                      className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
-                      placeholder="Nhập lại Mật Khẩu"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showRePass ? "type" : "password"}
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
+                        placeholder="Nhập lại Mật Khẩu"
+                      />
+                      <button
+                        className="absolute top-1/2  transform  -translate-y-1/2 right-2"
+                        onClick={() => {
+                          setShowRePass(!showRePass);
+                        }}
+                      >
+                        {
+                          <img
+                            src={showRePass ? show : hide}
+                            alt=""
+                            className="w-8 h-8 rounded-full px-2 py-2 hover:bg-gray-400"
+                          />
+                        }
+                      </button>
+                    </div>
                   </div>
                   <br />
                   <div>
@@ -59,9 +98,9 @@ export default function Register() {
 
                 <div className="flex items-center justify-center">
                   <div className="text-sm">
-                    <a href="/login" className="font-medium text-red-600 hover:text-gray-900">
+                    <NavLink to="/login" className="font-medium text-red-600 hover:text-gray-900">
                       Bạn có tài khoản rồi? Đăng nhập
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
 
@@ -71,7 +110,7 @@ export default function Register() {
                     Đăng kí
                   </button>
                 </div>
-              </form>
+              </Form>
             </div>
           </div>
         </div>

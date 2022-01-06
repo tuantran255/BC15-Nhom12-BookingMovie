@@ -1,7 +1,11 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import show from "../../assets/images/show.png";
+import hide from "../../assets/images/hide.png";
 import logoAvatar from "../../assets/images/user-regular.svg";
+import Form from "antd/lib/form/Form";
 export default function Login() {
+  let [showPass, setShowPass] = useState(false);
   return (
     <div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-96 h-3/5 rounded-xl">
@@ -12,7 +16,7 @@ export default function Login() {
                 <img className="mx-auto h-12 " src={logoAvatar} alt="Workflow" style={{ color: "white" }} />
                 <h2 className="mt-3 text-center text-2xl font-extrabold text-gray-900">Đăng Nhập</h2>
               </div>
-              <form className="mt-2 space-y-6">
+              <Form className="mt-2 space-y-6">
                 <div className="rounded-md shadow-sm -space-y-px">
                   <div>
                     <label className="sr-only">Tài Khoản</label>
@@ -24,11 +28,27 @@ export default function Login() {
                   <br />
                   <div>
                     <label className="sr-only mt-5">Mật Khẩu</label>
-                    <input
-                      type="password"
-                      className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
-                      placeholder="Mật Khẩu"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showPass ? "type" : "password"}
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
+                        placeholder="Mật Khẩu"
+                      />
+                      <button
+                        className="absolute top-1/2  transform  -translate-y-1/2 right-2"
+                        onClick={() => {
+                          setShowPass(!showPass);
+                        }}
+                      >
+                        {
+                          <img
+                            src={showPass ? show : hide}
+                            alt=""
+                            className="w-8 h-8 rounded-full px-2 py-2 hover:bg-gray-400"
+                          />
+                        }
+                      </button>
+                    </div>
                   </div>
                 </div>
 
@@ -44,9 +64,9 @@ export default function Login() {
                   </div>
 
                   <div className="text-sm">
-                    <a href="/register" className="font-medium text-red-600 hover:text-gray-900">
+                    <NavLink to="/register" className="font-medium text-red-600 hover:text-gray-900">
                       Đăng kí tài khoản?
-                    </a>
+                    </NavLink>
                   </div>
                 </div>
 
@@ -56,7 +76,7 @@ export default function Login() {
                     Đăng nhập
                   </button>
                 </div>
-              </form>
+              </Form>
             </div>
           </div>
         </div>
