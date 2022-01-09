@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import show from "../../assets/images/show.png";
 import hide from "../../assets/images/hide.png";
@@ -6,7 +6,16 @@ import logoAvatar from "../../assets/images/user-regular.svg";
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useDispatch, useSelector } from "react-redux";
+import { getApiRegister } from "../../redux/slices/registerSlice";
 export default function Register() {
+  const dispatch = useDispatch();
+
+  const { listUserRegister } = useSelector(state => state.register);
+
+  useEffect(() => {
+    dispatch(getApiRegister());
+  }, []);
   let [showPass, setShowPass] = useState(false);
   let [showRePass, setShowRePass] = useState(false);
   const formik = useFormik({
@@ -29,18 +38,30 @@ export default function Register() {
         .required("Số điện thoại không được để trống")
         .matches(
           /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-          "Chưa nhập đúng số điện thoại"
+          "Số điện thoại phải là số"
         )
-        .min(9, "Chưa nhập đúng số điện thoại")
-        .max(10, "Chưa nhập đúng số điện thoại"),
+        .min(9, "Số điện thoại phải có ít nhất 9 số")
+        .max(10, "Số điện thoại không quá 10 số"),
       hoTen: Yup.string()
         .required("Họ tên không được để trống")
         .matches(/^[A-Za-z ]*$/, "Họ và tên không dấu")
         .min(6, "Họ và tên có ít nhất 6 kí tự"),
     }),
     onSubmit: values => {
-      console.log(formik.values.matKhau);
-      console.log(formik.values.nhapLaiMatKhau);
+      console.log(values);
+      let indexTaiKhoan = listUserRegister.findIndex(user => user.taiKhoan === values.taiKhoan);
+      if (!indexTaiKhoan) {
+        formik.setFieldError("taiKhoan", "Tài khoản đã tồn tại");
+      }
+      let indexEmail = listUserRegister.findIndex(user => user.email === values.email);
+      if (!indexEmail) {
+        formik.setFieldError("email", "Email đã tồn tại");
+      }
+      let indexSDT = listUserRegister.findIndex(user => user.soDt === values.soDt);
+      console.log(indexSDT);
+      if (indexSDT) {
+        formik.setFieldError("soDt", "Số điện thoại đã tồn tại");
+      }
     },
   });
   return (

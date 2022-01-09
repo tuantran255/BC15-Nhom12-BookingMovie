@@ -10,22 +10,38 @@ export const loginSlice = createSlice({
   name: "login",
   initialState: {
     userLogin: user,
+    listUser: null,
   },
   reducers: {
-    getUser: (state, action) => {
+    addUserLogin: (state, action) => {
+      state.checkUser = false;
       const thongTinDangNhap = action.payload;
       localStorage.setItem(USER_LOGIN, JSON.stringify(thongTinDangNhap));
       localStorage.setItem(TOKEN, thongTinDangNhap.accessToken);
       state.userLogin = action.payload;
     },
+    addListUser: (state, action) => {
+      state.listUser = action.payload;
+    },
   },
 });
 
-export const getAPILogin = thongTinDangNhap => {
+export const postAPILogin = thongTinDangNhap => {
   return async dispatch => {
     try {
       let result = await api.post(`/api/QuanLyNguoiDung/DangNhap`, thongTinDangNhap);
-      dispatch(getUser(result.data.content));
+      dispatch(addUserLogin(result.data.content));
+    } catch (err) {
+      console.log(`err`, err.response?.data);
+    }
+  };
+};
+
+export const getListUser = () => {
+  return async dispatch => {
+    try {
+      let result = await api.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung`);
+      dispatch(addListUser(result.data.content));
     } catch (err) {
       console.log(`err`, err.response?.data);
     }
@@ -33,5 +49,5 @@ export const getAPILogin = thongTinDangNhap => {
 };
 
 const { actions, reducer } = loginSlice;
-export const { getUser } = actions;
+export const { addUserLogin, addListUser } = actions;
 export default reducer;

@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import show from "../../assets/images/show.png";
 import hide from "../../assets/images/hide.png";
 import logoAvatar from "../../assets/images/user-regular.svg";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { getAPILogin } from "../../redux/slices/loginSlice";
+import { postAPILogin, getListUser } from "../../redux/slices/loginSlice";
 import * as Yup from "yup";
 export default function Login() {
   const dispatch = useDispatch();
-  const userLogin = useSelector(state => state.login?.userLogin);
+
+  const { listUser } = useSelector(state => state.login);
+
+  useEffect(() => {
+    dispatch(getListUser());
+  }, []);
+
   let [showPass, setShowPass] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       taiKhoan: "",
@@ -21,9 +28,23 @@ export default function Login() {
       matKhau: Yup.string().required("Mật khẩu không được để trống"),
     }),
     onSubmit: values => {
-      dispatch(getAPILogin(values));
+      dispatch(postAPILogin(values));
+      let index = listUser.findIndex(user => user.taiKhoan === values.taiKhoan);
+      console.log(index);
+      if (index === -1) {
+        formik.setFieldError("taiKhoan", "Tài khoản không tồn tại");
+      }
+      if (listUser[index].matKhau !== values.matKhau) {
+        formik.setFieldError("matKhau", "Mật khẩu nhập vào không đúng");
+      }
+      // for (let key in listUser) {
+      //   if (values.taiKhoan !== listUser[key].taiKhoan) {
+      //     formik.setFieldError("taiKhoan", "Tài khoản hoặc mật khẩu không đúng");
+      //   }
+      // }
     },
   });
+
   return (
     <div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-96 h-auto rounded-xl">
@@ -42,6 +63,7 @@ export default function Login() {
                       name="taiKhoan"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
+                      onFocus={formik.handleBlur}
                       className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                       placeholder="Tài Khoản"
                     />
@@ -57,6 +79,7 @@ export default function Login() {
                         name="matKhau"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        onFocus={formik.handleBlur}
                         type={showPass ? "type" : "password"}
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                         placeholder="Mật Khẩu"
