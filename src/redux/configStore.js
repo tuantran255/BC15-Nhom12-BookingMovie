@@ -3,6 +3,7 @@ import bannerReducer from "./slices/bannerSlice";
 import detailSlice from "./slices/detailSlice";
 import loginSlice from "./slices/loginSlice";
 import registerSlice from "./slices/registerSlice";
+import purchaseSlice from "./slices/purchaseSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     detail: detailSlice,
     login: loginSlice,
     register: registerSlice,
+    purchase: purchaseSlice,
   },
 });

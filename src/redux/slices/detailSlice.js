@@ -7,7 +7,7 @@ export const detailSlice = createSlice({
     filmDetail: {},
   },
   reducers: {
-    getMovieDetail: (state, action) => {
+    addMovieDetail: (state, action) => {
       state.filmDetail = action.payload;
     },
   },
@@ -18,7 +18,7 @@ export const getAPIDetail = maPhim => {
     try {
       let result = await api.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`);
       //lấy được dữ liệu từ api đưa lên redux
-      dispatch(getMovieDetail(result.data.content));
+      dispatch(addMovieDetail(result.data.content));
     } catch (err) {
       console.log(`err`, err.response?.data);
     }
@@ -26,5 +26,5 @@ export const getAPIDetail = maPhim => {
 };
 
 const { actions, reducer } = detailSlice;
-export const { getMovieDetail } = actions;
+export const { addMovieDetail } = actions;
 export default reducer;

@@ -1,7 +1,8 @@
 import React from "react";
-import { Button, Divider, Tabs } from "antd";
+import { Divider, Tabs } from "antd";
 import { useSelector } from "react-redux";
 import moment from "moment";
+import { NavLink } from "react-router-dom";
 
 const { TabPane } = Tabs;
 export default function TabsDetail(props) {
@@ -12,7 +13,6 @@ export default function TabsDetail(props) {
     <div>
       <Tabs tabPosition="left" type="card" defaultActiveKey="1" centered>
         {heThongRapChieu?.map((cumRap, index) => {
-          console.log(cumRap);
           return (
             <TabPane
               tab={
@@ -30,14 +30,20 @@ export default function TabsDetail(props) {
                       <h1 className="text-2xl text-left">{rapChieu.tenCumRap}</h1>
                       <h3>{`Địa chỉ: ${rapChieu.diaChi}`}</h3>
                     </Divider>
-                    <div className="grid grid-cols-3 gap-10">
-                      {rapChieu.lichChieuPhim?.map((gioChieu, index) => {
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                      {rapChieu.lichChieuPhim.slice(0, 12)?.map((gioChieu, index) => {
                         return (
-                          <Button danger shape="round" key={index}>
-                            <span>{moment(gioChieu.ngayChieuGioChieu).format("hh:mm A")}</span>
-                            <span>~</span>
-                            <span>{moment(gioChieu.ngayChieuGioChieu).format("L")}</span>
-                          </Button>
+                          <NavLink
+                            key={index}
+                            to={`/purchase/${gioChieu.maLichChieu}`}
+                            className="border-2 text-center rounded-2xl py-2 shadow-xl w-11/12"
+                          >
+                            <span className="text-green-500">
+                              {moment(gioChieu.ngayChieuGioChieu).format("hh:mm A")}
+                            </span>
+                            <span className="text-black">~</span>
+                            <span className="text-red-600">{moment(gioChieu.ngayChieuGioChieu).format("L")}</span>
+                          </NavLink>
                         );
                       })}
                     </div>

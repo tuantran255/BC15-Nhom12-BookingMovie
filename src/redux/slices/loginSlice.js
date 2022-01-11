@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { history } from "../../App";
 import { api, TOKEN, USER_LOGIN } from "../../util/apiSetting";
 
 let user = {};
@@ -31,6 +32,7 @@ export const postAPILogin = thongTinDangNhap => {
     try {
       let result = await api.post(`/api/QuanLyNguoiDung/DangNhap`, thongTinDangNhap);
       dispatch(addUserLogin(result.data.content));
+      history.goBack();
     } catch (err) {
       console.log(`err`, err.response?.data);
     }

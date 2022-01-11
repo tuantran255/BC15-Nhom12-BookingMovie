@@ -7,6 +7,8 @@ import Detail from "./pages/Detail/Detail";
 import Login from "./pages/Login/Login";
 import { LoginTemplate } from "./templates/LoginTemplate/LoginTemplate";
 import Register from "./pages/Register/Register";
+import { PurchaseTemplate } from "./templates/PurchaseTemplate/PurchaseTemplate";
+import Purchase from "./pages/Purchase/Purchase";
 
 export const history = createBrowserHistory();
 
@@ -18,6 +20,7 @@ function App() {
         <HomeTemplate exact path="/detail/:id" Component={Detail} />
         <LoginTemplate exact path="/login" Component={Login} />
         <LoginTemplate exact path="/register" Component={Register} />
+        <PurchaseTemplate exact path="/purchase/:id" Component={Purchase} />
       </Switch>
     </BrowserRouter>
   );

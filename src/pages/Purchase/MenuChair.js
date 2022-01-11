@@ -1,0 +1,71 @@
+import React from "react";
+import bhd from "../../assets/images/icon-partner/bhd.png";
+import Chair from "./Chair";
+import "./MenuChair.css";
+import { CloseCircleOutlined } from "@ant-design/icons";
+import { useSelector } from "react-redux";
+
+export default function MenuChair() {
+  const { danhSachPhongVe } = useSelector(state => state.purchase);
+  console.log(danhSachPhongVe);
+
+  return (
+    <div className="w-4/5 h-screen mx-auto">
+      <div className="grid grid-cols-12">
+        <div className="col-span-8">
+          <div className="grid grid-cols-12">
+            <div className="col-span-2">
+              <img src={bhd} alt="" className="w-20" />
+            </div>
+            <div className="col-span-10 my-auto">
+              <div>
+                <span>BHD-Star - </span>
+                <span>Vincom 3/2</span>
+              </div>
+              <div>
+                <span>12:15</span>
+                <span> - </span>
+                <span>Rạp 5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-span-4 text-right my-auto">
+          <div className="mt-2">
+            <h3>Thời gian giữ vé</h3>
+            <h1 className="text-red-600 font-black text-3xl mr-2">5:00</h1>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="bg-black w-full h-3 mt-2 relative">
+          <h3 className="absolute top-5 left-1/2 transform -translate-x-1/2">Màn Hình</h3>
+        </div>
+        <div className="menu-screen w-full"></div>
+      </div>
+      <div>
+        <Chair />
+      </div>
+      <div className="text-center mt-10">
+        <div className="grid grid-cols-12">
+          <div className="col-span-3">
+            <div className="gheDangChon relative left-1/2 transform -translate-x-1/2"></div>
+            <h3>Ghế đang chọn</h3>
+          </div>
+          <div className="col-span-3">
+            <div className="gheVip relative left-1/2 transform -translate-x-1/2"></div>
+            <h3>Ghế Vip</h3>
+          </div>
+          <div className="col-span-3">
+            <div className="gheThuong relative left-1/2 transform -translate-x-1/2"></div>
+            <h3>Ghế thường</h3>
+          </div>
+          <div className="col-span-3">
+            <CloseCircleOutlined className="gheDaDat" />
+            <h3>Ghế đã đặt</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
