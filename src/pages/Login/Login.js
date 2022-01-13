@@ -11,7 +11,6 @@ export default function Login() {
   const dispatch = useDispatch();
 
   const { listUser } = useSelector(state => state.login);
-
   useEffect(() => {
     dispatch(getListUser());
   }, []);
@@ -30,7 +29,6 @@ export default function Login() {
     onSubmit: values => {
       dispatch(postAPILogin(values));
       let index = listUser.findIndex(user => user.taiKhoan === values.taiKhoan);
-      console.log(index);
       if (index === -1) {
         formik.setFieldError("taiKhoan", "Tài khoản không tồn tại");
       }

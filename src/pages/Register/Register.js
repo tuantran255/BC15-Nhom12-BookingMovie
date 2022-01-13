@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import show from "../../assets/images/show.png";
 import hide from "../../assets/images/hide.png";
 import logoAvatar from "../../assets/images/user-regular.svg";
@@ -7,12 +7,12 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { getApiRegister } from "../../redux/slices/registerSlice";
+import { getApiRegister, postValueRegister } from "../../redux/slices/registerSlice";
+import { USER_LOGIN } from "../../util/apiSetting";
 export default function Register() {
   const dispatch = useDispatch();
 
   const { listUserRegister } = useSelector(state => state.register);
-
   useEffect(() => {
     dispatch(getApiRegister());
   }, []);
@@ -48,22 +48,33 @@ export default function Register() {
         .min(6, "Họ và tên có ít nhất 6 kí tự"),
     }),
     onSubmit: values => {
-      console.log(values);
-      let indexTaiKhoan = listUserRegister.findIndex(user => user.taiKhoan === values.taiKhoan);
-      if (!indexTaiKhoan) {
+      let indexTaiKhoan = listUserRegister?.findIndex(user => user.taiKhoan === values.taiKhoan);
+      if (indexTaiKhoan !== -1) {
         formik.setFieldError("taiKhoan", "Tài khoản đã tồn tại");
       }
-      let indexEmail = listUserRegister.findIndex(user => user.email === values.email);
-      if (!indexEmail) {
+      let indexEmail = listUserRegister?.findIndex(user => user.email === values.email);
+      if (indexEmail !== -1) {
         formik.setFieldError("email", "Email đã tồn tại");
       }
-      let indexSDT = listUserRegister.findIndex(user => user.soDt === values.soDt);
-      console.log(indexSDT);
-      if (indexSDT) {
+      let indexSDT = listUserRegister?.findIndex(user => user.soDt === values.soDt);
+      if (indexSDT !== -1) {
         formik.setFieldError("soDt", "Số điện thoại đã tồn tại");
       }
+      let thongTinDangKy = {
+        email: values.email,
+        hoTen: values.hoTen,
+        matKhau: values.matKhau,
+        soDt: values.soDt,
+        taiKhoan: values.taiKhoan,
+      };
+      dispatch(postValueRegister(thongTinDangKy));
     },
   });
+
+  if (localStorage.getItem(USER_LOGIN)) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-96 h-auto rounded-xl">

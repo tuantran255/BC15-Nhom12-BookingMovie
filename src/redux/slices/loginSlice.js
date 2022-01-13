@@ -31,7 +31,7 @@ export const postAPILogin = thongTinDangNhap => {
   return async dispatch => {
     try {
       let result = await api.post(`/api/QuanLyNguoiDung/DangNhap`, thongTinDangNhap);
-      dispatch(addUserLogin(result.data.content));
+      await dispatch(addUserLogin(result.data.content));
       history.goBack();
     } catch (err) {
       console.log(`err`, err.response?.data);
@@ -43,7 +43,7 @@ export const getListUser = () => {
   return async dispatch => {
     try {
       let result = await api.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung`);
-      dispatch(addListUser(result.data.content));
+      await dispatch(addListUser(result.data.content));
     } catch (err) {
       console.log(`err`, err.response?.data);
     }
