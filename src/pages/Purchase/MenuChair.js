@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 export default function MenuChair() {
   const { danhSachPhongVe } = useSelector(state => state.purchase);
-  console.log(danhSachPhongVe);
+  const { thongTinPhim } = danhSachPhongVe;
 
   return (
     <div className="w-4/5 h-screen mx-auto">
@@ -15,17 +15,14 @@ export default function MenuChair() {
         <div className="col-span-8">
           <div className="grid grid-cols-12">
             <div className="col-span-2">
-              <img src={bhd} alt="" className="w-20" />
+              <img src={thongTinPhim.hinhAnh} alt="" className="w-20" />
             </div>
             <div className="col-span-10 my-auto">
+              <div>{thongTinPhim?.tenCumRap}</div>
               <div>
-                <span>BHD-Star - </span>
-                <span>Vincom 3/2</span>
-              </div>
-              <div>
-                <span>12:15</span>
+                <span>{thongTinPhim.gioChieu}</span>
                 <span> - </span>
-                <span>Rạp 5</span>
+                <span>{thongTinPhim.tenRap}</span>
               </div>
             </div>
           </div>
@@ -60,8 +57,8 @@ export default function MenuChair() {
             <div className="gheThuong relative left-1/2 transform -translate-x-1/2"></div>
             <h3>Ghế thường</h3>
           </div>
-          <div className="col-span-3">
-            <CloseCircleOutlined className="gheDaDat" />
+          <div className="col-span-3 ">
+            <CloseCircleOutlined className="gheDaDat p-2 " />
             <h3>Ghế đã đặt</h3>
           </div>
         </div>

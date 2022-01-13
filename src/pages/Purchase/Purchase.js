@@ -7,9 +7,9 @@ import MenuChair from "./MenuChair";
 export default function Purchase(props) {
   const dispatch = useDispatch();
   useEffect(() => {
+    let { id } = props.match.params;
     dispatch(getApiDanhSachPhongve(id));
   }, []);
-  let { id } = props.match.params;
 
   return (
     <div>

@@ -37,11 +37,6 @@ export default function Login() {
       if (listUser[index].matKhau !== values.matKhau) {
         formik.setFieldError("matKhau", "Mật khẩu nhập vào không đúng");
       }
-      // for (let key in listUser) {
-      //   if (values.taiKhoan !== listUser[key].taiKhoan) {
-      //     formik.setFieldError("taiKhoan", "Tài khoản hoặc mật khẩu không đúng");
-      //   }
-      // }
     },
   });
 

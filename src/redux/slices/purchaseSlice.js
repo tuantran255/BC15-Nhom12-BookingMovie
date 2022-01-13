@@ -4,11 +4,20 @@ import { api } from "../../util/apiSetting";
 export const purchaseSlice = createSlice({
   name: "purchase",
   initialState: {
-    danhSachPhongVe: null,
+    danhSachPhongVe: {},
+    gheDangChon: [],
   },
   reducers: {
     addDanhSachPhongVe: (state, action) => {
       state.danhSachPhongVe = action.payload;
+    },
+    addGheDangChon: (state, action) => {
+      let index = state.gheDangChon.findIndex(ghe => ghe.tenGhe === action.payload.tenGhe);
+      if (index !== -1) {
+        state.gheDangChon.splice(index, 1);
+      } else {
+        state.gheDangChon.push(action.payload);
+      }
     },
   },
 });
@@ -17,7 +26,9 @@ export const getApiDanhSachPhongve = maLichChieu => {
   return async dispatch => {
     try {
       let result = await api.get(`/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`);
-      dispatch(addDanhSachPhongVe(result.data.content));
+      if (result.status === 200) {
+        dispatch(addDanhSachPhongVe(result.data.content));
+      }
     } catch (error) {
       console.log(error.response?.data);
     }
@@ -25,5 +36,5 @@ export const getApiDanhSachPhongve = maLichChieu => {
 };
 
 const { actions, reducer } = purchaseSlice;
-export const { addDanhSachPhongVe } = actions;
+export const { addDanhSachPhongVe, addGheDangChon } = actions;
 export default reducer;
