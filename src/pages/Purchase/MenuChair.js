@@ -15,14 +15,14 @@ export default function MenuChair() {
         <div className="col-span-8">
           <div className="grid grid-cols-12">
             <div className="col-span-2">
-              <img src={thongTinPhim.hinhAnh} alt="" className="w-20" />
+              <img src={thongTinPhim?.hinhAnh} alt="" className="w-20" />
             </div>
             <div className="col-span-10 my-auto">
               <div>{thongTinPhim?.tenCumRap}</div>
               <div>
-                <span>{thongTinPhim.gioChieu}</span>
+                <span>{thongTinPhim?.gioChieu}</span>
                 <span> - </span>
-                <span>{thongTinPhim.tenRap}</span>
+                <span>{thongTinPhim?.tenRap}</span>
               </div>
             </div>
           </div>
