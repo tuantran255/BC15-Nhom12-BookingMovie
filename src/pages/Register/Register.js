@@ -26,8 +26,8 @@ export default function Register() {
       hoTen: "",
     },
     validationSchema: Yup.object().shape({
-      taiKhoan: Yup.string().required("Tài khoản không được để trống").min(6, "Tài khoản có ít nhất 6 kí tự"),
-      matKhau: Yup.string().required("Mật khẩu không được để trống").min(6, "Mật khẩu có ít nhất 6 kí tự"),
+      taiKhoan: Yup.string().trim().required("Tài khoản không được để trống").min(6, "Tài khoản có ít nhất 6 kí tự"),
+      matKhau: Yup.string().trim().required("Mật khẩu không được để trống").min(6, "Mật khẩu có ít nhất 6 kí tự"),
       nhapLaiMatKhau: Yup.string()
         .oneOf([Yup.ref("matKhau")], "Mật khẩu nhập lại không đúng")
         .required("Mật khẩu không được để trống"),
@@ -42,7 +42,11 @@ export default function Register() {
         .max(10, "Số điện thoại không quá 10 số"),
       hoTen: Yup.string()
         .required("Họ tên không được để trống")
-        .matches(/^[A-Za-z ]*$/, "Họ và tên không dấu")
+        .trim()
+        .matches(
+          /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\s\W|_]+$/,
+          "Họ và tên đang nhập không đúng"
+        )
         .min(6, "Họ và tên có ít nhất 6 kí tự"),
     }),
     onSubmit: values => {
