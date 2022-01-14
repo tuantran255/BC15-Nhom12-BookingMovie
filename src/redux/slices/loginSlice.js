@@ -11,7 +11,7 @@ export const loginSlice = createSlice({
   name: "login",
   initialState: {
     userLogin: user,
-    message: null,
+    message: "",
   },
   reducers: {
     addUserLogin: (state, action) => {
@@ -34,6 +34,7 @@ export const postAPILogin = thongTinDangNhap => {
       await dispatch(addUserLogin(result.data.content));
       history.goBack();
     } catch (err) {
+      dispatch(addMessage(""));
       const erroMessage = err.response?.data.content;
       dispatch(addMessage(erroMessage));
     }

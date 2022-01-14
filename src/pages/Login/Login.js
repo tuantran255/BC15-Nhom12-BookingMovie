@@ -22,17 +22,15 @@ export default function Login() {
       taiKhoan: Yup.string().required("Tài khoản không được để trống"),
       matKhau: Yup.string().required("Mật khẩu không được để trống"),
     }),
-    onSubmit: async values => {
-      await dispatch(postAPILogin(values));
-      if (message) {
-        formik.setFieldError("taiKhoan", message);
-      }
-      if (message) {
-        formik.setFieldError("taiKhoan", message);
-      }
+    onSubmit: values => {
+      dispatch(postAPILogin(values));
     },
   });
-
+  useEffect(() => {
+    if (message) {
+      formik.setFieldError("taiKhoan", message);
+    }
+  }, [message]);
   return (
     <div>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white w-96 h-auto rounded-xl">

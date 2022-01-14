@@ -5,7 +5,7 @@ import { history } from "../../App";
 export const registerSlice = createSlice({
   name: "register",
   initialState: {
-    message: null,
+    message: "",
   },
   reducers: {
     addMessage: (state, action) => {
@@ -20,8 +20,8 @@ export const postValueRegister = thongTinDangKy => {
       await api.post(`/api/QuanLyNguoiDung/DangKy`, thongTinDangKy);
       return history.goBack("login");
     } catch (error) {
+      dispatch(addMessage(""));
       let errorMessage = error.response?.data.content;
-      console.log(errorMessage);
       dispatch(addMessage(errorMessage));
     }
   };

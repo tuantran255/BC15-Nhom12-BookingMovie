@@ -45,7 +45,7 @@ export default function Register() {
         .matches(/^[A-Za-z ]*$/, "Họ và tên không dấu")
         .min(6, "Họ và tên có ít nhất 6 kí tự"),
     }),
-    onSubmit: async values => {
+    onSubmit: values => {
       let thongTinDangKy = {
         email: values.email,
         hoTen: values.hoTen,
@@ -53,20 +53,26 @@ export default function Register() {
         soDt: values.soDt,
         taiKhoan: values.taiKhoan,
       };
-      await dispatch(postValueRegister(thongTinDangKy));
-      if (message) {
-        console.log(message);
-        switch (message) {
-          case "Email đã tồn tại!":
-            formik.setFieldError("email", message);
-          case "Tài khoản đã tồn tại!":
-            formik.setFieldError("taiKhoan", message);
-          default:
-            break;
-        }
-      }
+      dispatch(postValueRegister(thongTinDangKy));
+      // switch (message) {
+      //   case "Email đã tồn tại!":
+      //     formik.setFieldError("email", message);
+      //   case "Tài khoản đã tồn tại!":
+      //     formik.setFieldError("taiKhoan", message);
+      //   default:
+      //     break;
+      // }
     },
   });
+
+  useEffect(() => {
+    if (message === "Tài khoản đã tồn tại!") {
+      formik.setFieldError("taiKhoan", message);
+    }
+    if (message === "Email đã tồn tại!") {
+      formik.setFieldError("email", message);
+    }
+  }, [message]);
 
   if (localStorage.getItem(USER_LOGIN)) {
     return <Redirect to="/" />;
@@ -85,7 +91,7 @@ export default function Register() {
               <form onSubmit={formik.handleSubmit}>
                 <div className="rounded-md shadow-sm -space-y-px">
                   <div>
-                    <label className="sr-only">Tài khoản</label>
+                    <label>Tài khoản</label>
                     <input
                       name="taiKhoan"
                       onChange={formik.handleChange}
