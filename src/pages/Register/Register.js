@@ -7,15 +7,13 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { getApiRegister, postValueRegister } from "../../redux/slices/registerSlice";
+import { postValueRegister } from "../../redux/slices/registerSlice";
 import { USER_LOGIN } from "../../util/apiSetting";
 export default function Register() {
   const dispatch = useDispatch();
 
-  const { listUserRegister } = useSelector(state => state.register);
-  useEffect(() => {
-    dispatch(getApiRegister());
-  }, []);
+  const { message } = useSelector(state => state.register);
+
   let [showPass, setShowPass] = useState(false);
   let [showRePass, setShowRePass] = useState(false);
   const formik = useFormik({
@@ -47,19 +45,7 @@ export default function Register() {
         .matches(/^[A-Za-z ]*$/, "Họ và tên không dấu")
         .min(6, "Họ và tên có ít nhất 6 kí tự"),
     }),
-    onSubmit: values => {
-      let indexTaiKhoan = listUserRegister?.findIndex(user => user.taiKhoan === values.taiKhoan);
-      if (indexTaiKhoan !== -1) {
-        formik.setFieldError("taiKhoan", "Tài khoản đã tồn tại");
-      }
-      let indexEmail = listUserRegister?.findIndex(user => user.email === values.email);
-      if (indexEmail !== -1) {
-        formik.setFieldError("email", "Email đã tồn tại");
-      }
-      let indexSDT = listUserRegister?.findIndex(user => user.soDt === values.soDt);
-      if (indexSDT !== -1) {
-        formik.setFieldError("soDt", "Số điện thoại đã tồn tại");
-      }
+    onSubmit: async values => {
       let thongTinDangKy = {
         email: values.email,
         hoTen: values.hoTen,
@@ -67,7 +53,18 @@ export default function Register() {
         soDt: values.soDt,
         taiKhoan: values.taiKhoan,
       };
-      dispatch(postValueRegister(thongTinDangKy));
+      await dispatch(postValueRegister(thongTinDangKy));
+      if (message) {
+        console.log(message);
+        switch (message) {
+          case "Email đã tồn tại!":
+            formik.setFieldError("email", message);
+          case "Tài khoản đã tồn tại!":
+            formik.setFieldError("taiKhoan", message);
+          default:
+            break;
+        }
+      }
     },
   });
 

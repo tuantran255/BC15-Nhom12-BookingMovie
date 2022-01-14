@@ -5,16 +5,12 @@ import hide from "../../assets/images/hide.png";
 import logoAvatar from "../../assets/images/user-regular.svg";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { postAPILogin, getListUser } from "../../redux/slices/loginSlice";
+import { postAPILogin } from "../../redux/slices/loginSlice";
 import * as Yup from "yup";
 export default function Login() {
   const dispatch = useDispatch();
 
-  const { listUser } = useSelector(state => state.login);
-  useEffect(() => {
-    dispatch(getListUser());
-  }, []);
-
+  const { message } = useSelector(state => state.login);
   let [showPass, setShowPass] = useState(false);
 
   const formik = useFormik({
@@ -26,14 +22,13 @@ export default function Login() {
       taiKhoan: Yup.string().required("Tài khoản không được để trống"),
       matKhau: Yup.string().required("Mật khẩu không được để trống"),
     }),
-    onSubmit: values => {
-      dispatch(postAPILogin(values));
-      let index = listUser.findIndex(user => user.taiKhoan === values.taiKhoan);
-      if (index === -1) {
-        formik.setFieldError("taiKhoan", "Tài khoản không tồn tại");
+    onSubmit: async values => {
+      await dispatch(postAPILogin(values));
+      if (message) {
+        formik.setFieldError("taiKhoan", message);
       }
-      if (listUser[index].matKhau !== values.matKhau) {
-        formik.setFieldError("matKhau", "Mật khẩu nhập vào không đúng");
+      if (message) {
+        formik.setFieldError("taiKhoan", message);
       }
     },
   });

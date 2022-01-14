@@ -11,7 +11,7 @@ export const loginSlice = createSlice({
   name: "login",
   initialState: {
     userLogin: user,
-    listUser: null,
+    message: null,
   },
   reducers: {
     addUserLogin: (state, action) => {
@@ -21,8 +21,8 @@ export const loginSlice = createSlice({
       localStorage.setItem(TOKEN, thongTinDangNhap.accessToken);
       state.userLogin = action.payload;
     },
-    addListUser: (state, action) => {
-      state.listUser = action.payload;
+    addMessage: (state, action) => {
+      state.message = action.payload;
     },
   },
 });
@@ -34,22 +34,12 @@ export const postAPILogin = thongTinDangNhap => {
       await dispatch(addUserLogin(result.data.content));
       history.goBack();
     } catch (err) {
-      console.log(`err`, err.response?.data);
-    }
-  };
-};
-
-export const getListUser = () => {
-  return async dispatch => {
-    try {
-      let result = await api.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung`);
-      await dispatch(addListUser(result.data.content));
-    } catch (err) {
-      console.log(`err`, err.response?.data);
+      const erroMessage = err.response?.data.content;
+      dispatch(addMessage(erroMessage));
     }
   };
 };
 
 const { actions, reducer } = loginSlice;
-export const { addUserLogin, addListUser } = actions;
+export const { addUserLogin, addMessage } = actions;
 export default reducer;
