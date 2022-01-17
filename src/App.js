@@ -22,7 +22,7 @@ function App() {
         <LoginTemplate exact path="/login" Component={Login} />
         <LoginTemplate exact path="/register" Component={Register} />
         <PurchaseTemplate exact path="/purchase/:id" Component={Purchase} />
-        <PurchaseTemplate exact path="/historybill/:id" Component={HistoryBill} />
+        <PurchaseTemplate exact path="/historybill" Component={HistoryBill} />
       </Switch>
     </BrowserRouter>
   );

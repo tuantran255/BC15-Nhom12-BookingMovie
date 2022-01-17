@@ -170,7 +170,7 @@ export default function BillChair() {
               className="bg-red-500 px-3 py-2 ml-2 rounded-md text-md text-white font-semibold"
               onClick={() => {
                 dispatch(postApiDatVe(danhSachVeChon));
-                history.push("/historybill/:id");
+                history.push("/historybill");
               }}
             >
               Thanh Toán
