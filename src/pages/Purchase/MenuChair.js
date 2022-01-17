@@ -1,14 +1,12 @@
 import React from "react";
-import bhd from "../../assets/images/icon-partner/bhd.png";
 import Chair from "./Chair";
 import "./MenuChair.css";
-import { CloseCircleOutlined } from "@ant-design/icons";
+import { CloseCircleOutlined, UserOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
 
 export default function MenuChair() {
   const { danhSachPhongVe } = useSelector(state => state.purchase);
   const { thongTinPhim } = danhSachPhongVe;
-
   return (
     <div className="w-4/5 h-screen mx-auto">
       <div className="grid grid-cols-12">
@@ -44,22 +42,26 @@ export default function MenuChair() {
         <Chair />
       </div>
       <div className="text-center mt-10">
-        <div className="grid grid-cols-12">
-          <div className="col-span-3">
+        <div className="grid grid-cols-25">
+          <div className="col-span-5">
             <div className="gheDangChon relative left-1/2 transform -translate-x-1/2"></div>
-            <h3>Ghế đang chọn</h3>
+            <h3 className="mt-2">Ghế đang chọn</h3>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-5">
             <div className="gheVip relative left-1/2 transform -translate-x-1/2"></div>
-            <h3>Ghế Vip</h3>
+            <h3 className="mt-2">Ghế Vip</h3>
           </div>
-          <div className="col-span-3">
+          <div className="col-span-5">
             <div className="gheThuong relative left-1/2 transform -translate-x-1/2"></div>
-            <h3>Ghế thường</h3>
+            <h3 className="mt-2">Ghế thường</h3>
           </div>
-          <div className="col-span-3 ">
-            <CloseCircleOutlined className="gheDaDat p-2 " />
-            <h3>Ghế đã đặt</h3>
+          <div className="col-span-5">
+            <CloseCircleOutlined className="gheDaDat p-2" />
+            <h3 className="mt-2">Ghế đã đặt</h3>
+          </div>
+          <div className="col-span-5">
+            <UserOutlined className="gheNguoiDungDat p-2" />
+            <h3 className="mt-2">Ghế bạn đặt</h3>
           </div>
         </div>
       </div>

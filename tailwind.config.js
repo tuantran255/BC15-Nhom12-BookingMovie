@@ -428,6 +428,7 @@ module.exports = {
       "span-11": "span 11 / span 11",
       "span-12": "span 12 / span 12",
       "span-16": "span 16 / span 16",
+      "span-25": "span 25 / span 25",
       "span-full": "1 / -1",
     },
     gridColumnEnd: {
@@ -507,6 +508,7 @@ module.exports = {
       11: "repeat(11, minmax(0, 1fr))",
       12: "repeat(12, minmax(0, 1fr))",
       16: "repeat(16, minmax(0, 1fr))",
+      25: "repeat(25, minmax(0, 1fr))",
     },
     gridTemplateRows: {
       none: "none",

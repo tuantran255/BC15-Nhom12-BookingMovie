@@ -9,6 +9,7 @@ import { LoginTemplate } from "./templates/LoginTemplate/LoginTemplate";
 import Register from "./pages/Register/Register";
 import { PurchaseTemplate } from "./templates/PurchaseTemplate/PurchaseTemplate";
 import Purchase from "./pages/Purchase/Purchase";
+import HistoryBill from "./pages/Purchase/HistoryBill";
 
 export const history = createBrowserHistory();
 
@@ -21,6 +22,7 @@ function App() {
         <LoginTemplate exact path="/login" Component={Login} />
         <LoginTemplate exact path="/register" Component={Register} />
         <PurchaseTemplate exact path="/purchase/:id" Component={Purchase} />
+        <PurchaseTemplate exact path="/historybill/:id" Component={HistoryBill} />
       </Switch>
     </BrowserRouter>
   );

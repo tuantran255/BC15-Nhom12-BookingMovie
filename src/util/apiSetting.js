@@ -18,7 +18,7 @@ api.interceptors.request.use(
     config.headers = {
       ...config.headers,
       [KEY_TOKEN_CYBERSOFT]: TOKEN_CYBERSOFT, //Qui định của cybersoft tất cả mọi request
-      //   Authorization: "Bearer " + localStorage.getItem("accessToken"), //Token mà người dùng đăng nhập (401 token ko hợp lệ, 403 ko đủ quyền truy cập)
+      Authorization: "Bearer " + localStorage.getItem("accessToken"), //Token mà người dùng đăng nhập (401 token ko hợp lệ, 403 ko đủ quyền truy cập)
     };
     return config;
   },

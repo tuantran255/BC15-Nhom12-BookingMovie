@@ -19,6 +19,7 @@
   font-size: 20px;
   line-height: 10px;
   border-radius: 5px;
+  cursor: no-drop;
 }
 
 .gheThuong {
@@ -35,4 +36,13 @@
   height: 35px;
   font-size: 14px;
   border-radius: 5px;
+}
+
+.gheNguoiDungDat {
+  background-color: rgb(247, 247, 247);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: rgb(255, 62, 62);
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: no-drop;
 }

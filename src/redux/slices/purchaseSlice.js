@@ -6,6 +6,7 @@ export const purchaseSlice = createSlice({
   initialState: {
     danhSachPhongVe: {},
     gheDangChon: [],
+    thongTinTaiKhoan: {},
   },
   reducers: {
     addDanhSachPhongVe: (state, action) => {
@@ -18,6 +19,9 @@ export const purchaseSlice = createSlice({
       } else {
         state.gheDangChon.push(action.payload);
       }
+    },
+    addThongTinTaiKhoan: (state, action) => {
+      state.thongTinTaiKhoan = action.payload;
     },
   },
 });
@@ -35,6 +39,29 @@ export const getApiDanhSachPhongve = maLichChieu => {
   };
 };
 
+export const postApiDatVe = danhSachVe => {
+  return async () => {
+    try {
+      await api.post(`/api/QuanLyDatVe/DatVe`, danhSachVe);
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+  };
+};
+
+export const postApiLayThongTinNguoiDung = () => {
+  return async dispatch => {
+    try {
+      let result = await api.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`);
+      if (result.status === 200) {
+        dispatch(addThongTinTaiKhoan(result.data.content));
+      }
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+  };
+};
+
 const { actions, reducer } = purchaseSlice;
-export const { addDanhSachPhongVe, addGheDangChon } = actions;
+export const { addDanhSachPhongVe, addGheDangChon, addThongTinTaiKhoan } = actions;
 export default reducer;
