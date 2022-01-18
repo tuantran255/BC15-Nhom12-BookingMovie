@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { api } from "../../util/apiSetting";
+import { displayLoading, hideLoading } from "./loadingSlice";
 
 export const detailSlice = createSlice({
   name: "detail",
@@ -16,11 +17,14 @@ export const detailSlice = createSlice({
 export const getAPIDetail = maPhim => {
   return async dispatch => {
     try {
+      await dispatch(displayLoading());
       let result = await api.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`);
       //lấy được dữ liệu từ api đưa lên redux
-      dispatch(addMovieDetail(result.data.content));
+      await dispatch(addMovieDetail(result.data.content));
+      await dispatch(hideLoading());
     } catch (err) {
       console.log(`err`, err.response?.data);
+      await dispatch(hideLoading());
     }
   };
 };

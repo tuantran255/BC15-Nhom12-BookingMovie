@@ -10,12 +10,14 @@ import Register from "./pages/Register/Register";
 import { PurchaseTemplate } from "./templates/PurchaseTemplate/PurchaseTemplate";
 import Purchase from "./pages/Purchase/Purchase";
 import HistoryBill from "./pages/Purchase/HistoryBill";
+import Loading from "./components/Loading/Loading";
 
 export const history = createBrowserHistory();
 
 function App() {
   return (
     <BrowserRouter history={history}>
+      <Loading />
       <Switch>
         <HomeTemplate exact path="/" Component={Home} />
         <HomeTemplate exact path="/detail/:id" Component={Detail} />

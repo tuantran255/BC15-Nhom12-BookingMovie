@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { api } from "../../util/apiSetting";
+import { displayLoading, hideLoading } from "./loadingSlice";
 
 export const purchaseSlice = createSlice({
   name: "purchase",
@@ -29,12 +30,15 @@ export const purchaseSlice = createSlice({
 export const getApiDanhSachPhongve = maLichChieu => {
   return async dispatch => {
     try {
+      await dispatch(displayLoading());
       let result = await api.get(`/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`);
       if (result.status === 200) {
         dispatch(addDanhSachPhongVe(result.data.content));
       }
+      await dispatch(hideLoading());
     } catch (error) {
       console.log(error.response?.data);
+      await dispatch(hideLoading());
     }
   };
 };
