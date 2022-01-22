@@ -5,6 +5,7 @@ import loginSlice from "./slices/loginSlice";
 import registerSlice from "./slices/registerSlice";
 import purchaseSlice from "./slices/purchaseSlice";
 import loadingSlice from "./slices/loadingSlice";
+import filmsSlice from "./slices/filmsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     register: registerSlice,
     purchase: purchaseSlice,
     loading: loadingSlice,
+    films: filmsSlice,
   },
 });

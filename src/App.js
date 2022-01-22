@@ -11,6 +11,11 @@ import { PurchaseTemplate } from "./templates/PurchaseTemplate/PurchaseTemplate"
 import Purchase from "./pages/Purchase/Purchase";
 import HistoryBill from "./pages/Purchase/HistoryBill";
 import Loading from "./components/Loading/Loading";
+import Dashboard from "./pages/Admin/DashBoard/Dashboard";
+import { AdminTemplate } from "./templates/AdminTemplate/AdminTemplate";
+import Films from "./pages/Admin/Films/Films";
+import ShowTime from "./pages/Admin/Showtime/ShowTime";
+import AddNewFilms from "./pages/Admin/Films/AddNewFilms/AddNewFilms";
 
 export const history = createBrowserHistory();
 
@@ -25,6 +30,10 @@ function App() {
         <LoginTemplate exact path="/register" Component={Register} />
         <PurchaseTemplate exact path="/purchase/:id" Component={Purchase} />
         <PurchaseTemplate exact path="/historybill" Component={HistoryBill} />
+        <AdminTemplate exact path="/admin" Component={Dashboard} />
+        <AdminTemplate exact path="/admin/films" Component={Films} />
+        <AdminTemplate exact path="/admin/films/addnewfilms" Component={AddNewFilms} />
+        <AdminTemplate exact path="/admin/showtime" Component={ShowTime} />
       </Switch>
     </BrowserRouter>
   );
