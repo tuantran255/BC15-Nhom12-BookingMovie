@@ -30,10 +30,10 @@ export const AdminTemplate = props => {
     alert("Bạn chưa đãng nhập tài khoản. Vui lòng đăng nhập");
     return <Redirect to="/login" />;
   }
-  //   if (userLogin.maLoaiNguoiDung !== "QuanTri") {
-  //     alert("Tài khoản của bạn không có quyền truy cập vào trang này");
-  //     return <Redirect to="/" />;
-  //   }
+  if (userLogin.maLoaiNguoiDung !== "QuanTri") {
+    alert("Tài khoản của bạn không có quyền truy cập vào trang này");
+    return <Redirect to="/" />;
+  }
 
   return (
     <Route
@@ -50,18 +50,29 @@ export const AdminTemplate = props => {
                   </NavLink>
                 </div>
                 <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-                  <Menu.Item
-                    key="1"
-                    icon={<UserOutlined />}
-                    onClick={() => {
-                      history.push("/admin");
-                    }}
-                  >
-                    Quản lý tài khoản
-                  </Menu.Item>
-                  <SubMenu key="20" icon={<LaptopOutlined />} title="Phim">
+                  <SubMenu key="sub10" icon={<LaptopOutlined />} title="User">
+                    <Menu.Item
+                      key="1"
+                      icon={<UserOutlined />}
+                      onClick={() => {
+                        history.push("/admin");
+                      }}
+                    >
+                      Quản lý tài khoản
+                    </Menu.Item>
                     <Menu.Item
                       key="2"
+                      icon={<UserOutlined />}
+                      onClick={() => {
+                        history.push("/admin/films/adduser");
+                      }}
+                    >
+                      Thêm tài khoản
+                    </Menu.Item>
+                  </SubMenu>
+                  <SubMenu key="sub20" icon={<LaptopOutlined />} title="Phim">
+                    <Menu.Item
+                      key="3"
                       icon={<FileOutlined />}
                       onClick={() => {
                         history.push("/admin/films");
@@ -70,7 +81,7 @@ export const AdminTemplate = props => {
                       Quản lý phim
                     </Menu.Item>
                     <Menu.Item
-                      key="3"
+                      key="4"
                       icon={<FileOutlined />}
                       onClick={() => {
                         history.push("/admin/films/addnewfilms");
@@ -80,7 +91,7 @@ export const AdminTemplate = props => {
                     </Menu.Item>
                   </SubMenu>
                   <Menu.Item
-                    key="4"
+                    key="5"
                     icon={<FileOutlined />}
                     onClick={() => {
                       history.push("/admin/showtime");

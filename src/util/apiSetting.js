@@ -29,3 +29,4 @@ api.interceptors.request.use(
 
 export const USER_LOGIN = "USER_LOGIN";
 export const TOKEN = "accessToken";
+export const GROUNDID = "GP01";

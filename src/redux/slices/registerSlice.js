@@ -18,6 +18,7 @@ export const postValueRegister = thongTinDangKy => {
   return async dispatch => {
     try {
       await api.post(`/api/QuanLyNguoiDung/DangKy`, thongTinDangKy);
+      alert("Đăng ký tài khoản thành công");
       return history.goBack("login");
     } catch (error) {
       dispatch(addMessage(""));

@@ -4,7 +4,7 @@ import { SearchOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons"
 import "./Films.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getAPIDanhSachPhim } from "../../../redux/slices/filmsSlice";
+import { deletePhim, getAPIDanhSachPhim } from "../../../redux/slices/filmsSlice";
 import { NavLink } from "react-router-dom";
 export default function Films() {
   const dispatch = useDispatch();
@@ -63,14 +63,23 @@ export default function Films() {
       title: "Hành động",
       width: "20%",
       render: (text, films) => {
+        let maPhim = films.maPhim;
         return (
           <Fragment>
-            <NavLink to="/" className="text-blue-500 text-2xl p-5">
+            <NavLink key={1} to={`/admin/films/editfilms/${films.maPhim}`} className="text-blue-500 text-2xl p-5">
               <EditOutlined />
             </NavLink>
-            <NavLink to="/" className="text-red-500 text-2xl p-5">
+            <button
+              key={2}
+              className="text-red-600 text-2xl p-5 hover:text-red-400"
+              onClick={() => {
+                if (window.confirm("Bạn có muốn xóa phim" + films.tenPhim)) {
+                  dispatch(deletePhim(maPhim));
+                }
+              }}
+            >
               <DeleteOutlined />
-            </NavLink>
+            </button>
           </Fragment>
         );
       },
@@ -80,13 +89,9 @@ export default function Films() {
 
   const data = arrDanhSachPhim;
 
-  function onChange(pagination, filters, sorter, extra) {
-    console.log("params", pagination, filters, sorter, extra);
-  }
-
   return (
     <div>
-      <h1 className="text-2xl font-black text-center">Quản lý phim:</h1>
+      <h1 className="text-3xl font-black text-center text-red-600">Quản lý phim:</h1>
       <NavLink
         to="/admin/films/addnewfilms"
         className="border-2 px-5 py-2 border-red-500 text-red-500 text-xl rounded-full hover:bg-red-500 hover:text-white"
@@ -99,7 +104,7 @@ export default function Films() {
           <Button icon={<SearchOutlined />} className="my-button-search-films hover:bg-red-500" type="submit" />
         </Tooltip>
       </div>
-      <Table columns={columns} dataSource={data} onChange={onChange} />
+      <Table columns={columns} dataSource={data} rowKey={"maPhim"} />
     </div>
   );
 }
