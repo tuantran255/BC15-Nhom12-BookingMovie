@@ -64,7 +64,7 @@ export const AdminTemplate = props => {
                       key="2"
                       icon={<UserOutlined />}
                       onClick={() => {
-                        history.push("/admin/films/adduser");
+                        history.push("/admin/dashboard/adduser");
                       }}
                     >
                       Thêm tài khoản

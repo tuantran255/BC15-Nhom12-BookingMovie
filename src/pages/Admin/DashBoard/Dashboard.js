@@ -57,19 +57,19 @@ export default function Dashboard() {
     {
       title: "Hành động",
       width: "20%",
-      render: (text, films) => {
-        let maPhim = films.maPhim;
+      render: (text, user) => {
+        let maTaiKhoan = user.taiKhoan;
         return (
           <Fragment>
-            <NavLink key={1} to={`/admin/films/edituser/${films.maPhim}`} className="text-blue-500 text-2xl p-5">
+            <NavLink key={1} to={`/admin/dashboard/edituser/${user.taiKhoan}`} className="text-blue-500 text-2xl p-5">
               <EditOutlined />
             </NavLink>
             <button
               key={2}
               className="text-red-600 text-2xl p-5 hover:text-red-400"
               onClick={() => {
-                if (window.confirm("Bạn có muốn xóa phim" + films.tenPhim)) {
-                  dispatch(deletePhim(maPhim));
+                if (window.confirm("Bạn có muốn xóa phim" + user.taiKhoan)) {
+                  dispatch(deletePhim(maTaiKhoan));
                 }
               }}
             >
@@ -93,7 +93,7 @@ export default function Dashboard() {
     <div>
       <h1 className="text-3xl font-black text-center text-red-600">Quản lý người dùng:</h1>
       <NavLink
-        to="/admin/films/adduser"
+        to="/admin/dashboard/adduser"
         className="border-2 px-5 py-2 border-red-500 text-red-500 text-xl rounded-full hover:bg-red-500 hover:text-white"
       >
         Thêm người dùng

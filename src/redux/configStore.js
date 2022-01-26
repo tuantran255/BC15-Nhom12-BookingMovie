@@ -9,6 +9,7 @@ import filmsSlice from "./slices/filmsSlice";
 import addNewFilmsSlice from "./slices/addNewFilms";
 import editFilmsSlice from "./slices/editFilmsSlice";
 import dashboardSlice from "./slices/dashboardSlice";
+import editUserSlice from "./slices/editUserSlice";
 
 export const store = configureStore({
   reducer: {
@@ -22,5 +23,6 @@ export const store = configureStore({
     addFilms: addNewFilmsSlice,
     editFilms: editFilmsSlice,
     dashboard: dashboardSlice,
+    editUser: editUserSlice,
   },
 });

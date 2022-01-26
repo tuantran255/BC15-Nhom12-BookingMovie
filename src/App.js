@@ -34,8 +34,8 @@ function App() {
         <PurchaseTemplate exact path="/purchase/:id" Component={Purchase} />
         <PurchaseTemplate exact path="/historybill" Component={HistoryBill} />
         <AdminTemplate exact path="/admin" Component={Dashboard} />
-        <AdminTemplate exact path="/admin/films/adduser" Component={AddUser} />
-        <AdminTemplate exact path="/admin/films/edituser/:id" Component={EditUser} />
+        <AdminTemplate exact path="/admin/dashboard/adduser" Component={AddUser} />
+        <AdminTemplate exact path="/admin/dashboard/edituser/:id" Component={EditUser} />
         <AdminTemplate exact path="/admin/films" Component={Films} />
         <AdminTemplate exact path="/admin/films/addnewfilms" Component={AddNewFilms} />
         <AdminTemplate exact path="/admin/films/editfilms/:id" Component={EditFilms} />
