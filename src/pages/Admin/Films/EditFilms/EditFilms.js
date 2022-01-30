@@ -167,7 +167,7 @@ export default function AddNewFilms(props) {
         <Form.Item label="Hình ảnh">
           <input type="file" accept="image/png, image/jpeg,image/gif,image/png" onChange={handleChangeFile} />
           <br />
-          <img src={fileImg == "" ? thongTinPhim.hinhAnh : fileImg} alt="" className="w-40 h-60" />
+          <img src={fileImg === "" ? thongTinPhim.hinhAnh : fileImg} alt="" className="w-40 h-60" />
         </Form.Item>
         <Form.Item label="Tác vụ">
           <button

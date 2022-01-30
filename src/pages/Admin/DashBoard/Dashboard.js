@@ -6,9 +6,11 @@ import { useEffect } from "react";
 import { deletePhim } from "../../../redux/slices/filmsSlice";
 import { NavLink } from "react-router-dom";
 import { getAPIDanhSachNguoiDung } from "../../../redux/slices/dashboardSlice";
+import { useState } from "react";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
+  const [valueSearch, setValueSearch] = useState("");
   const { danhSachNguoiDung } = useSelector(state => state.dashboard);
   useEffect(() => {
     dispatch(getAPIDanhSachNguoiDung());
@@ -88,7 +90,14 @@ export default function Dashboard() {
     let newobj = { ...obj, soThuTu: index };
     newData.push(newobj);
   });
-  const data = newData;
+
+  const filteredPersons = newData.filter(person => {
+    return person.taiKhoan.toLowerCase().includes(valueSearch.toLowerCase());
+  });
+  const data = filteredPersons;
+  const handleChangeSearch = e => {
+    setValueSearch(e.target.value);
+  };
   return (
     <div>
       <h1 className="text-3xl font-black text-center text-red-600">Quản lý người dùng:</h1>
@@ -99,7 +108,7 @@ export default function Dashboard() {
         Thêm người dùng
       </NavLink>
       <div className="my-10 flex">
-        <Input placeholder="Tìm Tên Phim" size="large" bordered="true" />
+        <Input placeholder="Tìm Tên Phim" size="large" bordered="true" onChange={handleChangeSearch} />
         <Tooltip title="search">
           <Button icon={<SearchOutlined />} className="my-button-search-films hover:bg-red-500" type="submit" />
         </Tooltip>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Input, Button, Tooltip, Table } from "antd";
 import { SearchOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import "./Films.css";
@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { deletePhim, getAPIDanhSachPhim } from "../../../redux/slices/filmsSlice";
 import { NavLink } from "react-router-dom";
 export default function Films() {
+  const [valueSearch, setValueSearch] = useState("");
   const dispatch = useDispatch();
   const { arrDanhSachPhim } = useSelector(state => state.films);
 
@@ -86,8 +87,13 @@ export default function Films() {
       align: "center",
     },
   ];
-
-  const data = arrDanhSachPhim;
+  const handleChangeSearch = e => {
+    setValueSearch(e.target.value);
+  };
+  const filteredDanhSachPhim = arrDanhSachPhim.filter(person => {
+    return person.tenPhim.toLowerCase().includes(valueSearch.toLowerCase());
+  });
+  const data = filteredDanhSachPhim;
 
   return (
     <div>
@@ -99,7 +105,7 @@ export default function Films() {
         Thêm Phim
       </NavLink>
       <div className="my-10 flex">
-        <Input placeholder="Tìm Tên Phim" size="large" bordered="true" />
+        <Input placeholder="Tìm Tên Phim" size="large" bordered="true" onChange={handleChangeSearch} />
         <Tooltip title="search">
           <Button icon={<SearchOutlined />} className="my-button-search-films hover:bg-red-500" type="submit" />
         </Tooltip>

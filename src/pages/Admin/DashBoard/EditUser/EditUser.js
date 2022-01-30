@@ -186,7 +186,7 @@ export default function AddUser(props) {
               <Option value="GP12">GP12</Option>
               <Option value="GP13">GP13</Option>
               <Option value="GP14">GP14</Option>
-              <Option value="G15">GP15</Option>
+              <Option value="GP15">GP15</Option>
               <Option value="GP16">GP16</Option>
             </Select>
             {formik.errors.maNhom && formik.touched.maNhom ? (
