@@ -31,8 +31,9 @@ export const postApiLayThongTinNguoiDung = taiKhoan => {
 export const postApiCapNhapThongTinNguoiDung = thongTinNguoiDung => {
   return async () => {
     try {
-      await api.post(`/api/QuanLyNguoiDung/ThemNguoiDung`, thongTinNguoiDung);
+      await api.post(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, thongTinNguoiDung);
       alert("Người dùng đã được cập nhập");
+      window.location.reload();
     } catch (error) {
       console.log(error.response?.data);
     }

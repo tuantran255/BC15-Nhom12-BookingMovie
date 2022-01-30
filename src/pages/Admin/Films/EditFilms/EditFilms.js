@@ -52,6 +52,10 @@ export default function AddNewFilms(props) {
           }
         }
       }
+      // Kiểm tra values formData
+      // for (var pair of formData.entries()) {
+      //   console.log(pair[0] + ", " + pair[1]);
+      // }
       dispatch(postApiCapNhatPhimUpload(formData));
     },
   });
@@ -61,7 +65,7 @@ export default function AddNewFilms(props) {
   };
 
   const handleChangeDataPicker = value => {
-    formik.setFieldValue("ngayKhoiChieu", moment(value));
+    formik.setFieldValue("ngayKhoiChieu", value);
   };
 
   const handleChangeSwitch = name => {

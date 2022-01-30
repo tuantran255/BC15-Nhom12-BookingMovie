@@ -49,16 +49,18 @@ export default function AddUser(props) {
     }),
     onSubmit: values => {
       let thongTinDangKy = {
+        taiKhoan: values.taiKhoan,
+        email: values.email,
         hoTen: values.hoTen,
         matKhau: values.matKhau,
-        soDT: values.soDt,
+        soDt: values.soDt,
         maLoaiNguoiDung: values.loaiNguoiDung,
         maNhom: values.maNhom,
       };
-      if (values.loaiNguoiDung == "") {
+      if (values.loaiNguoiDung === "") {
         formik.setFieldError("loaiNguoiDung", "Chọn loại người dùng");
       }
-      if (values.maNhom == "") {
+      if (values.maNhom === "") {
         formik.setFieldError("maNhom", "Chọn nhóm");
       }
       dispatch(postApiCapNhapThongTinNguoiDung(thongTinDangKy));
@@ -72,6 +74,7 @@ export default function AddUser(props) {
       formik.setFieldError("email", message);
     }
   }, [message]);
+
   return (
     <div>
       <h1 className="text-center font-black text-red-600 text-3xl mb-10">Cập nhập thông tin người dùng</h1>
@@ -147,8 +150,8 @@ export default function AddUser(props) {
             <Select
               size="large"
               style={{ width: 150 }}
-              onChange={giatri => {
-                formik.setFieldValue("loaiNguoiDung", giatri.value);
+              onChange={value => {
+                formik.setFieldValue("loaiNguoiDung", value);
               }}
               value={formik.values.loaiNguoiDung}
             >
@@ -165,7 +168,7 @@ export default function AddUser(props) {
               size="large"
               style={{ width: 150 }}
               onChange={giatri => {
-                formik.setFieldValue("maNhom", giatri.value);
+                formik.setFieldValue("maNhom", giatri);
               }}
               value={formik.values.maNhom}
             >
@@ -197,7 +200,7 @@ export default function AddUser(props) {
             type="submit"
             className="cursor-pointer border-2 border-red-600 text-red-600 hover:text-white hover:bg-red-600 py-1 px-3 text-xl rounded-md"
           >
-            Thêm
+            Cập nhập
           </button>
         </div>
       </Form>
