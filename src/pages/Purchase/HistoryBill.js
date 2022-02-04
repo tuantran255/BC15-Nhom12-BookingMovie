@@ -22,14 +22,14 @@ export default function HistoryBill() {
   const renderListThongTinDatVe = () => {
     return thongTinDatVe?.map((listVe, index) => {
       return (
-        <div className="grid grid-cols-12 rounded-xl shadow-2xl drop-shadow-2xl ml-10 mb-10" key={index}>
-          <div className="col-span-3 h-64 mr-5">
+        <div className="grid grid-cols-12 rounded-xl shadow-2xl drop-shadow-2xl md:ml-10 md:mb-10" key={index}>
+          <div className="col-span-5 lg:col-span-3 h-72 mr-5">
             <img src={thongTinDatVe[index].hinhAnh} alt="" className="w-full h-full rounded-2xl" />
           </div>
-          <div className="col-span-9 h-60">
-            <div className="grid grid-rows-2">
+          <div className="col-span-7 lg:col-span-9 h-60">
+            <div className="grid lg:grid-rows-2 md:grid-rows-3 h-full">
               <div className="grid grid-cols-12">
-                <div className="col-span-3">
+                <div className="col-span-5 lg:col-span-3">
                   <img
                     src={
                       thongTinDatVe[index].danhSachGhe[0].maHeThongRap === "CGV"
@@ -45,16 +45,16 @@ export default function HistoryBill() {
                         : BHD
                     }
                     alt=""
-                    className="h-32 w-full rounded-2xl"
+                    className="h-20 md:h-30 lg:h-32 md:w-full rounded-2xl"
                   />
                 </div>
-                <div className="col-span-9 text-2xl ml-5 my-auto">
+                <div className="col-span-7 lg:col-span-9 md:text-xl lg:text-2xl ml-2 my-auto ">
                   <h1>{thongTinDatVe[index].danhSachGhe[0].tenHeThongRap}</h1>
                 </div>
               </div>
-              <div className="text-2xl mt-5">
-                <div className="">
-                  <p className="mb-1">
+              <div className="text-xl md:text-2xl md:mt-0 lg:mt-5 md:row-span-2 lg:row-span-1">
+                <div>
+                  <p className="mb-1 mt-2">
                     <span>Ngày Đặt - </span>
                     <span className="text-red-600">{`${moment(thongTinDatVe[index].ngayDat).format("L")} - `}</span>
                     <span>{thongTinDatVe[index].danhSachGhe[0].tenCumRap}</span>
@@ -86,7 +86,7 @@ export default function HistoryBill() {
       <div className="flex flex-col text-center w-full mb-10">
         <h1 className="text-4xl font-bold title-font mb-4 text-red-500 tracking-widest">Lịch sử đặt vé của bạn</h1>
       </div>
-      <div className="grid grid-cols-2 gap-4">{renderListThongTinDatVe()}</div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2  gap-10 md:gap-4">{renderListThongTinDatVe()}</div>
     </div>
   );
 }

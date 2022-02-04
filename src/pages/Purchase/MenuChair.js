@@ -12,10 +12,10 @@ export default function MenuChair() {
       <div className="grid grid-cols-12">
         <div className="col-span-8">
           <div className="grid grid-cols-12">
-            <div className="col-span-2">
-              <img src={thongTinPhim?.hinhAnh} alt="" className="w-20" />
+            <div className="col-span-4 md:col-span-2">
+              <img src={thongTinPhim?.hinhAnh} alt="" className="md:w-20" />
             </div>
-            <div className="col-span-10 my-auto">
+            <div className="col-span-8 md:col-span-10 my-auto md:ml-10">
               <div>{thongTinPhim?.tenCumRap}</div>
               <div>
                 <span>{thongTinPhim?.gioChieu}</span>

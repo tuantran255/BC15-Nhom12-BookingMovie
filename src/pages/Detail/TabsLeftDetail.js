@@ -25,10 +25,12 @@ export default function TabsDetail(props) {
             >
               {cumRap.cumRapChieu?.map((rapChieu, index) => {
                 return (
-                  <div className="mb-5 mr-5" key={index}>
-                    <Divider orientation="left ">
-                      <h1 className="text-2xl text-left">{rapChieu.tenCumRap}</h1>
-                      <h3>{`Địa chỉ: ${rapChieu.diaChi}`}</h3>
+                  <div className="mb-5 mr-5 w-full" key={index}>
+                    <Divider orientation="left">
+                      <h1 className="md:text-2xl sm:text-sm text-left">{rapChieu.tenCumRap}</h1>
+                      <div>
+                        <p className="md:text-xl sm:text-xs text-left break-all">{`Địa chỉ: ${rapChieu.diaChi}`}</p>
+                      </div>
                     </Divider>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                       {rapChieu.lichChieuPhim.slice(0, 12)?.map((gioChieu, index) => {

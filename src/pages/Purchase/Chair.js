@@ -13,7 +13,7 @@ export default function Chair() {
 
   return (
     <div className="text-center mt-10 ">
-      <div className="grid grid-cols-16 gap-4 justify-items-center">
+      <div className="grid grid-cols-8 md:grid-cols-16 gap-4 justify-items-center">
         {danhSachGhe?.map((listGhe, index) => {
           let cssGhe = "gheThuong";
           let disable = false;
