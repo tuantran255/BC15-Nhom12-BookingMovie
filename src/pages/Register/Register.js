@@ -95,7 +95,6 @@ export default function Register() {
               <form onSubmit={formik.handleSubmit}>
                 <div className="rounded-md shadow-sm -space-y-px">
                   <div>
-                    <label>Tài khoản</label>
                     <input
                       name="taiKhoan"
                       onChange={formik.handleChange}

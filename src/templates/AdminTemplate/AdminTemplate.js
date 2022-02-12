@@ -21,7 +21,7 @@ export const AdminTemplate = props => {
   let { Component, path } = props;
   const { Header, Content, Footer, Sider } = Layout;
   const { SubMenu } = Menu;
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const onCollapse = collapsed => {
     setCollapsed(collapsed);
   };

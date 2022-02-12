@@ -5,7 +5,6 @@ import ItemDetail from "./ItemDetail";
 import ListDetail from "./ListDetail";
 export default function Detail(props) {
   const dispatch = useDispatch();
-
   useEffect(() => {
     let { id } = props.match.params;
     dispatch(getAPIDetail(id));

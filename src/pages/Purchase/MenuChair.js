@@ -3,6 +3,7 @@ import Chair from "./Chair";
 import "./MenuChair.css";
 import { CloseCircleOutlined, UserOutlined } from "@ant-design/icons";
 import { useSelector } from "react-redux";
+import Timer from "./Timer";
 
 export default function MenuChair() {
   const { danhSachPhongVe } = useSelector(state => state.purchase);
@@ -28,7 +29,9 @@ export default function MenuChair() {
         <div className="col-span-4 text-right my-auto">
           <div className="mt-2">
             <h3>Thời gian giữ vé</h3>
-            <h1 className="text-red-600 font-black text-3xl mr-2">5:00</h1>
+            <h1 className="text-red-600 font-black text-3xl mr-2">
+              <Timer />
+            </h1>
           </div>
         </div>
       </div>
