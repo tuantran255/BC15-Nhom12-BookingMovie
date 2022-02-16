@@ -1,6 +1,6 @@
 {
   "name": "bc15-nhom12-bookingmovie",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@fancyapps/ui": "^4.0.12",
