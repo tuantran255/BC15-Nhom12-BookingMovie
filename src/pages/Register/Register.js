@@ -76,7 +76,7 @@ export default function Register() {
     if (message === "Email đã tồn tại!") {
       formik.setFieldError("email", message);
     }
-  }, [message]);
+  }, [formik, message]);
 
   if (localStorage.getItem(USER_LOGIN)) {
     return <Redirect to="/" />;

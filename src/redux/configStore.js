@@ -10,6 +10,8 @@ import addNewFilmsSlice from "./slices/addNewFilms";
 import editFilmsSlice from "./slices/editFilmsSlice";
 import dashboardSlice from "./slices/dashboardSlice";
 import editUserSlice from "./slices/editUserSlice";
+import listMoviesReducer from "./slices/listMoviesSlice";
+import listCinemaReducer from "./slices/listCinemaSlice";
 
 export const store = configureStore({
   reducer: {
@@ -24,5 +26,7 @@ export const store = configureStore({
     editFilms: editFilmsSlice,
     dashboard: dashboardSlice,
     editUser: editUserSlice,
+    listMovies: listMoviesReducer,
+    listCinema: listCinemaReducer,
   },
 });

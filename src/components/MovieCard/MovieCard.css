@@ -1,0 +1,90 @@
+.cardMovie {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #000;
+}
+.cardMovie .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cardMovie .image img {
+  width: 100%;
+  transition: 0.5s;
+}
+.cardMovie:hover .image img {
+  opacity: 0.5;
+  transform: translateX(30%); /*100%*/
+}
+.cardMovie .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%; /*100%*/
+  height: 100%;
+  background: #ff3636;
+  transition: 0.5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+.cardMovie:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+.cardMovie .details .center {
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.cardMovie .details .center h1 {
+  margin: 0;
+  padding: 0;
+  color: #ff3636;
+  line-height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.cardMovie .details .center h1 span {
+  font-size: 14px;
+  color: #262626;
+}
+.cardMovie .details .center p {
+  margin: 10px 0;
+  padding: 0;
+  color: #262626;
+}
+.cardMovie .details .center ul {
+  margin: 10px auto 0;
+  padding: 0;
+  display: block;
+}
+.cardMovie .details .center ul li {
+  list-style: none;
+  margin: 0 5px;
+  text-align: center;
+}
+.cardMovie .details .center ul li a {
+  display: block;
+  /* background: #262626; */
+  margin: 4px auto;
+  color: #ff3636;
+  border: 1px solid #ff3636;
+  width: 60%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transform: 0.5s;
+}
+.cardMovie .details .center ul li a:hover {
+  background: rgba(255, 54, 54, 0.8);
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .cardMovie {
+    height: 350px;
+  }
+}

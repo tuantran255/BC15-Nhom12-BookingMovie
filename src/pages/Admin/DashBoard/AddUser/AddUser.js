@@ -50,7 +50,7 @@ export default function AddUser() {
         taiKhoan: values.taiKhoan,
         loaiNguoiDung: values.loaiNguoiDung,
       };
-      if (values.loaiNguoiDung == "") {
+      if (values.loaiNguoiDung === "") {
         formik.setFieldError("loaiNguoiDung", "Chọn loại người dùng");
       }
       dispatch(postValueRegister(thongTinDangKy));
@@ -64,13 +64,8 @@ export default function AddUser() {
     if (message === "Email đã tồn tại!") {
       formik.setFieldError("email", message);
     }
-  }, [message]);
+  }, [formik, message]);
 
-  const handleChangeSelect = name => {
-    return value => {
-      formik.setFieldValue(name, value);
-    };
-  };
   return (
     <div>
       <h1 className="text-center font-black text-red-600 text-3xl mb-10">Thêm người dùng</h1>

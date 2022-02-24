@@ -19,6 +19,7 @@ import Films from "./pages/Admin/Films/Films";
 import ShowTime from "./pages/Admin/Showtime/ShowTime";
 import AddNewFilms from "./pages/Admin/Films/AddNewFilms/AddNewFilms";
 import EditFilms from "./pages/Admin/Films/EditFilms/EditFilms";
+import ListMovie from "./pages/ListMovie/ListMovie";
 
 export const history = createBrowserHistory();
 
@@ -40,6 +41,7 @@ function App() {
         <AdminTemplate exact path="/admin/films/addnewfilms" Component={AddNewFilms} />
         <AdminTemplate exact path="/admin/films/editfilms/:id" Component={EditFilms} />
         <AdminTemplate exact path="/admin/showtime" Component={ShowTime} />
+        <HomeTemplate exact path="/listmovie" Component={ListMovie} />
       </Switch>
     </BrowserRouter>
   );

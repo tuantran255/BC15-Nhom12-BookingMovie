@@ -26,7 +26,7 @@ export default function ItemDetail(props) {
                 <p className="font-black sm:text-xl md:text-3xl text-red-500">{filmDetail.tenPhim}</p>
                 <div>
                   <p>Mô tả:</p>
-                  <p className="text-sm md:text-2xl">{filmDetail.moTa}</p>
+                  <p className="text-sm md:text-2xl ">{filmDetail.moTa?.length >150? filmDetail.moTa.substr(0, 150) + "..." : filmDetail.moTa}</p>
                 </div>
                 <div>
                   <Button type="primary" size="large" className="ml-5">

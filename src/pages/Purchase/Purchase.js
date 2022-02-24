@@ -14,10 +14,10 @@ export default function Purchase(props) {
   return (
     <div>
       <div className="grid grid-cols-12 pt-20">
-        <div className="lg:col-span-8 col-span-12 ">
+        <div className="lg:col-span-8 col-span-12 md:mb-10 sm:mb-140">
           <MenuChair />
         </div>
-        <div className="lg:col-span-4 col-span-12 shadow-2xl lg:mt-0 md:-mt-80 mt-140">
+        <div className="lg:col-span-4 col-span-12 shadow-2xl">
           <BillChair />
         </div>
       </div>
