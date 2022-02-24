@@ -1,4 +1,5 @@
 import axios from "axios";
+export const GROUPID = "GP10"
 
 export const DOMAIN = "https://movienew.cybersoft.edu.vn";
 

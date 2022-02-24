@@ -4,7 +4,7 @@ export default function Footer(props) {
   return (
     <div className="p-5" style={{ backgroundColor: "#222" }}>
       <div className="mainMaxWidth mx-auto ">
-        <div className="grid grid-cols-3">
+        <div className="lg:grid grid-cols-3 hidden">
           <div>
             <p className="text-white text-xs">Tix</p>
             <div className="grid grid-cols-2 gap-2">
@@ -301,14 +301,15 @@ export default function Footer(props) {
             </div>
           </div>
         </div>
-        <hr className="my-5 opacity-30" />
-        <div className="grid grid-cols-12">
+        <hr className="my-5 opacity-30 md:block hidden" />
+        <div className="md:grid md:grid-cols-12 flex flex-col items-center md:items-start">
           <img
             src="./images/zion-logo.jpg"
             alt="zion-logo"
             className="rounded-md"
+            width="100"
           />
-          <div className="col-span-9 px-4">
+          <div className="col-span-9 px-4 text-center my-6 md:my-0">
             <p className="text-white text-xs mb-2">
               TIX – SẢN PHẨM CỦA CÔNG TY CỔ PHẦN ZION
             </p>
@@ -352,7 +353,7 @@ export default function Footer(props) {
               <img
                 src="./images/bo-cong-thuong.png"
                 alt="bo-cong-thuong-icon"
-                className="w-10/12"
+                width="100"
               />
             </a>
           </div>
