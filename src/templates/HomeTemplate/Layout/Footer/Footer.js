@@ -31,7 +31,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/cgv.png"
+                  src="./images/iconPartner/cgv.png"
                   className="w-8 bg-white rounded-full"
                   alt="logo-partner"
                 />
@@ -42,7 +42,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/bhd.png"
+                  src="./images/iconPartner/bhd.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -53,7 +53,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/galaxycine.png"
+                  src="./images/iconPartner/galaxycine.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -64,7 +64,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/cinestar.png"
+                  src="./images/iconPartner/cinestar.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -75,7 +75,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/lotte.png"
+                  src="./images/iconPartner/lotte.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -86,7 +86,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/megags.png"
+                  src="./images/iconPartner/megags.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -97,7 +97,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/bt.jpg"
+                  src="./images/iconPartner/bt.jpg"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -108,7 +108,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/dongdacinema.png"
+                  src="./images/iconPartner/dongdacinema.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -119,7 +119,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/TOUCH.png"
+                  src="./images/iconPartner/TOUCH.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -130,7 +130,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/cnx.jpg"
+                  src="./images/iconPartner/cnx.jpg"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -141,7 +141,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/STARLIGHT.png"
+                  src="./images/iconPartner/STARLIGHT.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -152,7 +152,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/dcine.png"
+                  src="./images/iconPartner/dcine.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -163,7 +163,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/zalopay_icon.png"
+                  src="./images/iconPartner/zalopay_icon.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -174,7 +174,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/payoo.jpg"
+                  src="./images/iconPartner/payoo.jpg"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -185,7 +185,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/VCB.png"
+                  src="./images/iconPartner/VCB.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -196,7 +196,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/AGRIBANK.png"
+                  src="./images/iconPartner/AGRIBANK.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -207,7 +207,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/VIETTINBANK.png"
+                  src="./images/iconPartner/VIETTINBANK.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -218,7 +218,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/IVB.png"
+                  src="./images/iconPartner/IVB.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -229,7 +229,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/123go.png"
+                  src="./images/iconPartner/123go.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
@@ -240,7 +240,7 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
               >
                 <img
-                  src="./images/icon-partner/laban.png"
+                  src="./images/iconPartner/laban.png"
                   className="w-8 rounded-full"
                   alt="logo-partner"
                 />
