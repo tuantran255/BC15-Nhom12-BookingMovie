@@ -1,0 +1,16 @@
+.listMovie .ant-tabs-large > .ant-tabs-nav .ant-tabs-tab {
+  padding: 10px 0;
+}
+
+.listMovie .ant-tabs {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.listMovie .ant-tabs-tab:hover,
+.listMovie .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  @apply text-red-500;
+}
+
+.listMovie .ant-tabs-ink-bar {
+  @apply bg-red-500;
+}

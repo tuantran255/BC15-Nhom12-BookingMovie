@@ -1,4 +1,5 @@
 import axios from "axios";
+export const GROUPID = "GP10"
 
 export const DOMAIN = "https://movienew.cybersoft.edu.vn";
 
@@ -29,3 +30,4 @@ api.interceptors.request.use(
 
 export const USER_LOGIN = "USER_LOGIN";
 export const TOKEN = "accessToken";
+export const GROUNDID = "GP01";

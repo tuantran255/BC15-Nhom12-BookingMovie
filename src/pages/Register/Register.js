@@ -22,7 +22,7 @@ export default function Register() {
       matKhau: "",
       nhapLaiMatKhau: "",
       email: "",
-      soDT: "",
+      soDt: "",
       hoTen: "",
     },
     validationSchema: Yup.object().shape({
@@ -54,7 +54,7 @@ export default function Register() {
         email: values.email,
         hoTen: values.hoTen,
         matKhau: values.matKhau,
-        soDT: values.soDT,
+        soDt: values.soDt,
         taiKhoan: values.taiKhoan,
       };
       dispatch(postValueRegister(thongTinDangKy));
@@ -76,7 +76,7 @@ export default function Register() {
     if (message === "Email đã tồn tại!") {
       formik.setFieldError("email", message);
     }
-  }, [message]);
+  }, [formik, message]);
 
   if (localStorage.getItem(USER_LOGIN)) {
     return <Redirect to="/" />;
@@ -95,7 +95,6 @@ export default function Register() {
               <form onSubmit={formik.handleSubmit}>
                 <div className="rounded-md shadow-sm -space-y-px">
                   <div>
-                    <label>Tài khoản</label>
                     <input
                       name="taiKhoan"
                       onChange={formik.handleChange}
@@ -204,7 +203,7 @@ export default function Register() {
                   <div>
                     <label className="sr-only mt-5">Số điện thoại di động</label>
                     <input
-                      name="soDT"
+                      name="soDt"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"

@@ -32,6 +32,7 @@ export const postAPILogin = thongTinDangNhap => {
     try {
       let result = await api.post(`/api/QuanLyNguoiDung/DangNhap`, thongTinDangNhap);
       await dispatch(addUserLogin(result.data.content));
+      alert("Đăng nhập thành công");
       history.goBack();
     } catch (err) {
       dispatch(addMessage(""));

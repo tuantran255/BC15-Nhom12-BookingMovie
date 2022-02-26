@@ -56,12 +56,15 @@ export const postApiDatVe = danhSachVe => {
 export const postApiLayThongTinNguoiDung = () => {
   return async dispatch => {
     try {
+      await dispatch(displayLoading());
       let result = await api.post(`/api/QuanLyNguoiDung/ThongTinTaiKhoan`);
       if (result.status === 200) {
         dispatch(addThongTinTaiKhoan(result.data.content));
       }
+      await dispatch(hideLoading());
     } catch (error) {
       console.log(error.response?.data);
+      await dispatch(hideLoading());
     }
   };
 };

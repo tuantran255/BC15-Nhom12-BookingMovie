@@ -1,0 +1,33 @@
+.homeMenu .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab {
+  padding: 0 20px;
+}
+
+.homeMenu
+  .ant-tabs-left
+  > .ant-tabs-content-holder
+  > .ant-tabs-content
+  > .ant-tabs-tabpane {
+  padding-left: 0;
+}
+
+.homeMenu .ant-tabs-tab {
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.homeMenu .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+  margin: 0;
+}
+
+.homeMenu .ant-tabs-tab.ant-tabs-tab-active,
+.homeMenu .ant-tabs-tab:hover {
+  opacity: 1;
+}
+
+.homeMenu .ant-tabs-ink-bar {
+  @apply bg-red-400;
+}
+
+.homeMenu > .ant-tabs.ant-tabs-left {
+  @apply border border-solid border-gray-100;
+}

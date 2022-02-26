@@ -103,6 +103,8 @@ module.exports = {
       72: "18rem",
       80: "20rem",
       96: "24rem",
+      120: "30rem",
+      140: "35rem",
     },
     animation: {
       none: "none",
@@ -167,6 +169,7 @@ module.exports = {
     },
     brightness: {
       0: "0",
+      30: ".3",
       50: ".5",
       75: ".75",
       90: ".9",
@@ -228,6 +231,13 @@ module.exports = {
     },
     container: {
       center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
     },
     content: {
       none: "none",

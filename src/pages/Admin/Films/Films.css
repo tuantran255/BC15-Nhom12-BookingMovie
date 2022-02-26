@@ -1,0 +1,9 @@
+.my-button-search-films {
+  height: auto;
+  color: red;
+}
+
+.my-button-search-films:hover {
+  background: red;
+  color: white;
+}
