@@ -31,7 +31,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/cgv.png" className="w-8 bg-white rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/cgv.png"
+                  className="w-8 bg-white rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://bhdstar.vn/"
@@ -39,7 +43,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/bhd.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/bhd.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://galaxycine.vn/"
@@ -47,7 +55,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/galaxycine.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/galaxycine.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://cinestar.com.vn/"
@@ -55,7 +67,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/cinestar.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/cinestar.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://lottecinemavn.com/"
@@ -63,7 +79,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/lotte.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/lotte.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.megagscinemas.vn/"
@@ -71,7 +91,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/megags.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/megags.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.betacineplex.vn/"
@@ -79,7 +103,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/bt.jpg" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/bt.jpg"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://ddcinema.vn/"
@@ -87,7 +115,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/dongdacinema.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/dongdacinema.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://touchcinema.com/"
@@ -95,7 +127,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/TOUCH.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/TOUCH.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://cinemaxvn.com/"
@@ -103,7 +139,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/cnx.jpg" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/cnx.jpg"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://starlight.vn/"
@@ -111,7 +151,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/STARLIGHT.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/STARLIGHT.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.dcine.vn/"
@@ -119,7 +163,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/dcine.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/dcine.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://zalopay.vn/"
@@ -127,7 +175,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/zalopay_icon.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/zalopay_icon.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.payoo.vn/"
@@ -135,7 +187,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/payoo.jpg" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/payoo.jpg"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.vietcombank.com.vn/"
@@ -143,7 +199,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/VCB.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/VCB.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://www.agribank.com.vn/"
@@ -151,7 +211,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/AGRIBANK.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/AGRIBANK.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.vietinbank.vn/"
@@ -159,7 +223,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/VIETTINBANK.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/VIETTINBANK.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="https://www.indovinabank.com.vn/"
@@ -167,7 +235,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/IVB.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/IVB.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://123go.vn/"
@@ -175,7 +247,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/123go.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/123go.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
               <a
                 href="http://laban.vn/"
@@ -183,7 +259,11 @@ export default function Footer(props) {
                 className="transition duration-200 hover:opacity-80"
                 rel="noreferrer"
               >
-                <img src="./images/icon-partner/laban.png" className="w-8 rounded-full" alt="logo-partner" />
+                <img
+                  src="./images/iconPartner/laban.png"
+                  className="w-8 rounded-full"
+                  alt="logo-partner"
+                />
               </a>
             </div>
           </div>
