@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Route } from "react-router-dom";
-import Header from "./Layout/Header/Header";
 import backGroundLogin from "../../assets/images/backgroundlogin.jpg";
+import Header from "../../components/Header/Header";
 export const LoginTemplate = props => {
   let { Component, path } = props;
 

@@ -10,7 +10,6 @@ const { TabPane } = Tabs;
 function callback(key) {}
 
 function HomeMovie(props) {
-  console.log("HomeMovie");
   const renderListMovies = (arrMovies) => {
     return arrMovies.map((movie, index) => {
       if (index < 6) {
@@ -30,7 +29,10 @@ function HomeMovie(props) {
   };
   return (
     <Fragment>
-      <div className="container pt-20 md:pt-5 pb-10 xl:max-w-6xl listMovie">
+      <div
+        id="homeMovie"
+        className="container pt-20 md:pt-5 pb-10 xl:max-w-6xl listMovie"
+      >
         <Tabs defaultActiveKey="1" onChange={callback} size="large">
           <TabPane tab="Phim đang chiếu" key="1">
             <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-3 animate__animated animate__fadeIn">
@@ -65,10 +67,6 @@ function HomeMovie(props) {
                   state: {
                     status: "Upcoming",
                   },
-                }}
-                onClick={() => {
-                  document.body.scrollTop = 0;
-                  document.documentElement.scrollTop = 0;
                 }}
                 className="inline-block transition-all duration-300 px-10 py-3 font-semibold border rounded border-red-500 text-red-500 hover:text-white hover:bg-red-500"
               >

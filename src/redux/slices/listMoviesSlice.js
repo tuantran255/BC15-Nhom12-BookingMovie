@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { api, GROUPID } from "../../util/apiSetting";
+import { displayLoading, hideLoading } from "./loadingSlice";
 
 export const listMoviesSlice = createSlice({
   name: "listMovies",
@@ -24,12 +25,15 @@ export const listMoviesSlice = createSlice({
 export const getAPIListMovies = () => {
   return async (dispatch) => {
     try {
+      await dispatch(displayLoading());
       let result = await api.get(
         `/api/QuanLyPhim/LayDanhSachPhim?maNhom=${GROUPID}`
       );
       dispatch(getArrMovie(result.data.content));
+      await dispatch(hideLoading());
     } catch (err) {
       console.log(`err`, err.response?.data);
+      await dispatch(hideLoading());
     }
   };
 };

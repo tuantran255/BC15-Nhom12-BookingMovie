@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { api, GROUPID } from "../../util/apiSetting";
+import { displayLoading, hideLoading } from "./loadingSlice";
 
 export const listCinemaSlice = createSlice({
   name: "listCinema",
@@ -16,12 +17,15 @@ export const listCinemaSlice = createSlice({
 export const getAPIListCinema = () => {
   return async (dispatch) => {
     try {
+      await dispatch(displayLoading());
       let result = await api.get(
         `/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=${GROUPID}`
       );
-      dispatch(getArrCinema(result.data.content));
+      await dispatch(getArrCinema(result.data.content));
+      await dispatch(hideLoading());
     } catch (err) {
       console.log(`err`, err.response?.data);
+      await dispatch(hideLoading());
     }
   };
 };

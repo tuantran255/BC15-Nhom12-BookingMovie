@@ -9,7 +9,6 @@ import "./SwiperStyle.css";
 import PlayButton from "../../../components/PlayButton/PlayButton";
 
 function HomeCarousel(props) {
-  console.log("Carousel");
   const renderBanner = () => {
     return props.arrBanner.map((banner, index) => {
       return (

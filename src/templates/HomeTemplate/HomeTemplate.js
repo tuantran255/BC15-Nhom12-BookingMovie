@@ -1,19 +1,23 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Route } from "react-router-dom";
+import Header from "../../components/Header/Header";
 import Footer from "./Layout/Footer/Footer";
-import Header from "./Layout/Header/Header";
 
-export const HomeTemplate = props => {
+export const HomeTemplate = (props) => {
   let { Component, path } = props;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <Route
       exact
       path={path}
-      render={propsRoute => {
+      render={(propsRoute) => {
         return (
           <Fragment>
-            <Header />
+            <Header isHomePage={true} />
             <Component {...propsRoute} />
             <Footer />
           </Fragment>

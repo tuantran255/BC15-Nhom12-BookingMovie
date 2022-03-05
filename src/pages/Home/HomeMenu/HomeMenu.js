@@ -88,7 +88,7 @@ export default function HomeMenu({ arrCinema }) {
                                     .map((time, index) => {
                                       return (
                                         <NavLink
-                                          to="/"
+                                          to={`/purchase/${time.maLichChieu}`}
                                           key={index}
                                           className="text-red-400  bg-slate-50 px-3 py-2 rounded-lg border-solid border hover:text-red-500 hover:scale-105 transition-all duration-200"
                                         >
@@ -122,7 +122,7 @@ export default function HomeMenu({ arrCinema }) {
     });
   };
   return (
-    <div className="container py-5 xl:max-w-6xl homeMenu lg:block hidden">
+    <div id="homeCinema" className="container py-5 xl:max-w-6xl homeMenu lg:block hidden">
       <Tabs tabPosition={tabPosition}>{renderListCinema()}</Tabs>
     </div>
   );

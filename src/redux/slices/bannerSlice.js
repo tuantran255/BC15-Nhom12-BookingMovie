@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { api } from "../../util/apiSetting";
+import { displayLoading, hideLoading } from "./loadingSlice";
 
 export const bannerSlice = createSlice({
   name: "banner",
@@ -16,6 +17,7 @@ export const bannerSlice = createSlice({
 export const getAPIBanner = () => {
   return async dispatch => {
     try {
+      await dispatch(displayLoading());
       let result = await api.get("/api/QuanLyPhim/LayDanhSachBanner");
       let arrBanner = result.data.content;
       let newArrBanner = [];
@@ -25,8 +27,10 @@ export const getAPIBanner = () => {
         newArrBanner.push({ ...arrBanner[key], trailer });
       }
       dispatch(getArrBanner(newArrBanner));
+      await dispatch(hideLoading());
     } catch (err) {
       console.log(`err`, err.response?.data);
+      await dispatch(hideLoading());
     }
   };
 };

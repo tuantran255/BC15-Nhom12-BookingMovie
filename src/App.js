@@ -25,7 +25,7 @@ export const history = createBrowserHistory();
 
 function App() {
   return (
-    <BrowserRouter history={history}>
+    <Router history={history}>
       <Loading />
       <Switch>
         <HomeTemplate exact path="/" Component={Home} />
@@ -40,10 +40,11 @@ function App() {
         <AdminTemplate exact path="/admin/films" Component={Films} />
         <AdminTemplate exact path="/admin/films/addnewfilms" Component={AddNewFilms} />
         <AdminTemplate exact path="/admin/films/editfilms/:id" Component={EditFilms} />
-        <AdminTemplate exact path="/admin/showtime" Component={ShowTime} />
+        <AdminTemplate exact path="/admin/films/showtime/:id" Component={ShowTime} />
         <HomeTemplate exact path="/listmovie" Component={ListMovie} />
+        <HomeTemplate exact path="/profile"  />
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 

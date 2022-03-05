@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Input, Button, Tooltip, Table } from "antd";
-import { SearchOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import { SearchOutlined, EditOutlined, DeleteOutlined, CalendarOutlined } from "@ant-design/icons";
 import "./Films.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -81,6 +81,9 @@ export default function Films() {
             >
               <DeleteOutlined />
             </button>
+            <NavLink key={1} to={`/admin/films/showtime/${films.maPhim}`} className="text-green-500 text-2xl p-5">
+              <CalendarOutlined />
+            </NavLink>
           </Fragment>
         );
       },
