@@ -67,7 +67,7 @@ export default function Films() {
         let maPhim = films.maPhim;
         return (
           <Fragment>
-            <NavLink key={1} to={`/admin/films/editfilms/${films.maPhim}`} className="text-blue-500 text-2xl p-5">
+            <NavLink key={text} to={`/admin/films/editfilms/${films.maPhim}`} className="text-blue-500 text-2xl p-5">
               <EditOutlined />
             </NavLink>
             <button
