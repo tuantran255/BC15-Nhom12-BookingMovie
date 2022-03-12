@@ -12,11 +12,11 @@ export default function ItemDetail(props) {
       <img src={filmDetail.hinhAnh} alt="..." className="w-screen h-screen min-h-[900px] relative brightness-30" />
       <div className="grid grid-cols-12 ">
         <div className="grid md:grid-cols-3 sm:grid-cols-2 absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full md:w-11/12 lg:w-1/2 lg:h-2/4 md:h-1/3">
-          <div className="md:col-span-1 col-span-2">
+          <div className="md:col-span-1 col-span-2 mt-0 sm:mt-6">
             <img
               src={filmDetail.hinhAnh}
               alt=""
-              className="rounded-2xl drop-shadow-md md:h-full md:w-full h-80 mb-5 relative left-1/2 transform -translate-x-1/2 "
+              className="rounded-2xl drop-shadow-md md:h-full md:w-full h-80 mb-5 relative left-1/2 transform -translate-x-1/2"
             />
           </div>
           <div className="md:col-span-1 sm:col-span-6 ">
