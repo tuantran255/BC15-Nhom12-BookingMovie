@@ -9,9 +9,11 @@ import {
   getAPIListMovies,
   getListMovies,
 } from "../../redux/slices/listMoviesSlice";
+import HomeApp from "./HomeApp/HomeApp";
 import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import HomeMenu from "./HomeMenu/HomeMenu";
 import HomeMovie from "./HomeMovie/HomeMovie";
+import HomeNews from "./HomeNews/HomeNews";
 
 export default function Home(props) {
   let { arrBanner } = useSelector(getBanner);
@@ -31,6 +33,8 @@ export default function Home(props) {
         playingMovies={playingMovies}
       />
       <HomeMenu arrCinema={arrCinema} />
+      <HomeNews />
+      <HomeApp/>
     </Fragment>
   );
 }

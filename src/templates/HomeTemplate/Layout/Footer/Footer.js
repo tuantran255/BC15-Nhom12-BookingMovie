@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer(props) {
   return (
     <div className="p-5" style={{ backgroundColor: "#222" }}>
-      <div className="mainMaxWidth mx-auto ">
+      <div className="container xl:max-w-7xl mx-auto ">
         <div className="lg:grid grid-cols-3 hidden">
           <div>
             <p className="text-white text-xs">Tix</p>

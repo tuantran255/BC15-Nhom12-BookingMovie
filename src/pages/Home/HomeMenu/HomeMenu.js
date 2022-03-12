@@ -122,7 +122,7 @@ export default function HomeMenu({ arrCinema }) {
     });
   };
   return (
-    <div id="homeCinema" className="container py-5 xl:max-w-6xl homeMenu lg:block hidden">
+    <div id="homeCinema" className="container py-5 xl:max-w-7xl homeMenu lg:block hidden">
       <Tabs tabPosition={tabPosition}>{renderListCinema()}</Tabs>
     </div>
   );

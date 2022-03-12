@@ -4,10 +4,10 @@ import Header from "../../components/Header/Header";
 import Footer from "./Layout/Footer/Footer";
 
 export const HomeTemplate = (props) => {
-  let { Component, path } = props;
+  let { Component, path, isHomePage } = props;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   return (
@@ -17,7 +17,7 @@ export const HomeTemplate = (props) => {
       render={(propsRoute) => {
         return (
           <Fragment>
-            <Header isHomePage={true} />
+            <Header isHomePage={isHomePage} />
             <Component {...propsRoute} />
             <Footer />
           </Fragment>

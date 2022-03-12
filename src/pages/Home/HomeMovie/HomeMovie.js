@@ -31,7 +31,7 @@ function HomeMovie(props) {
     <Fragment>
       <div
         id="homeMovie"
-        className="container pt-20 md:pt-5 pb-10 xl:max-w-6xl listMovie"
+        className="container pt-20 md:pt-5 pb-10 xl:max-w-7xl listMovie"
       >
         <Tabs defaultActiveKey="1" onChange={callback} size="large">
           <TabPane tab="Phim đang chiếu" key="1">

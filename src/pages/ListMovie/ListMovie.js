@@ -38,7 +38,7 @@ export default function ListMovie(props) {
   return (
     <div className="container pt-20 pb-10 xl:max-w-5xl listMovie">
       <Tabs
-        defaultActiveKey={props.location.state.status === "Playing" ? "1" : "2"}
+        defaultActiveKey={props.location.state?.status && props.location.state?.status === "Upcoming" ? "2" : "1"}
         onChange={callback}
         size="large"
       >
