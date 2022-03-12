@@ -8,7 +8,7 @@ export const HomeTemplate = (props) => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  }, [Component]);
 
   return (
     <Route

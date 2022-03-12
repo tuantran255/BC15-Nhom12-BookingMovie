@@ -161,6 +161,12 @@ export default function Header(props) {
           to="/"
           aria-label="Back to homepage"
           className="flex items-center p-2 justify-center"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
         >
           <img src="../images/web-logo.png" alt="web-logo" width="50%" />
         </NavLink>
