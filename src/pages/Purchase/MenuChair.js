@@ -9,7 +9,7 @@ export default function MenuChair() {
   const { danhSachPhongVe } = useSelector(state => state.purchase);
   const { thongTinPhim } = danhSachPhongVe;
   return (
-    <div className="w-4/5 h-screen mx-auto">
+    <div className="w-4/5 mx-auto mb-10 ">
       <div className="grid grid-cols-12">
         <div className="col-span-8">
           <div className="grid grid-cols-12">
