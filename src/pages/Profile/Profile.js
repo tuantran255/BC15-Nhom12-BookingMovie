@@ -20,7 +20,6 @@ export default function Profile() {
   useEffect(() => {
     dispatch(postApiLayThongTinNguoiDung());
   }, []);
-
   const renderListThongTinDatVe = () => {
     return thongTinDatVe?.map((listVe, index) => {
       return (
@@ -122,14 +121,18 @@ export default function Profile() {
             <Input
               disabled
               placeholder={
+                user.email &&
                 user.email.substring(0, 2) +
-                "*****" +
-                user.email.substring(user.email.indexOf("@"))
+                  "*****" +
+                  user.email.substring(user.email.indexOf("@"))
               }
             />
           </Form.Item>
           <Form.Item label="Số điện thoại">
-            <Input disabled placeholder={user.soDT.substr(0, 5) + "*****"} />
+            <Input
+              disabled
+              placeholder={user.soDT && user.soDT.substr(0, 5) + "*****"}
+            />
           </Form.Item>
         </Form>
       </div>
