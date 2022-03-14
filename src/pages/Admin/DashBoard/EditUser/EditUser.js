@@ -21,7 +21,7 @@ export default function AddUser(props) {
       taiKhoan: thongTinNguoiDung?.taiKhoan,
       matKhau: thongTinNguoiDung?.matKhau,
       email: thongTinNguoiDung?.email,
-      soDt: thongTinNguoiDung?.soDT,
+      soDT: thongTinNguoiDung?.soDT,
       hoTen: thongTinNguoiDung?.hoTen,
       loaiNguoiDung: thongTinNguoiDung?.maLoaiNguoiDung,
       maNhom: thongTinNguoiDung?.maNhom,
@@ -30,7 +30,7 @@ export default function AddUser(props) {
       taiKhoan: Yup.string().trim().required("Tài khoản không được để trống").min(6, "Tài khoản có ít nhất 6 kí tự"),
       matKhau: Yup.string().trim().required("Mật khẩu không được để trống").min(6, "Mật khẩu có ít nhất 6 kí tự"),
       email: Yup.string().required("Email không được để trống").email("Email nhập chưa đúng"),
-      soDt: Yup.string()
+      soDT: Yup.string()
         .required("Số điện thoại không được để trống")
         .matches(
           /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
@@ -53,7 +53,7 @@ export default function AddUser(props) {
         email: values.email,
         hoTen: values.hoTen,
         matKhau: values.matKhau,
-        soDt: values.soDt,
+        soDT: values.soDT,
         maLoaiNguoiDung: values.loaiNguoiDung,
         maNhom: values.maNhom,
       };
@@ -136,13 +136,13 @@ export default function AddUser(props) {
             <h1>Số điện thoại</h1>
             <Input
               size="large"
-              name="soDt"
+              name="soDT"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.soDt}
+              value={formik.values.soDT}
             />
-            {formik.errors.soDt && formik.touched.soDt ? (
-              <div className="text-red-600">{formik.errors.soDt}</div>
+            {formik.errors.soDT && formik.touched.soDT ? (
+              <div className="text-red-600">{formik.errors.soDT}</div>
             ) : null}
           </div>
           <div className="col-span-6">

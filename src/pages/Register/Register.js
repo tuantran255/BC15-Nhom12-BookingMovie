@@ -22,7 +22,7 @@ export default function Register() {
       matKhau: "",
       nhapLaiMatKhau: "",
       email: "",
-      soDt: "",
+      soDT: "",
       hoTen: "",
     },
     validationSchema: Yup.object().shape({
@@ -32,7 +32,7 @@ export default function Register() {
         .oneOf([Yup.ref("matKhau")], "Mật khẩu nhập lại không đúng")
         .required("Mật khẩu không được để trống"),
       email: Yup.string().required("Email không được để trống").email("Email nhập chưa đúng"),
-      soDt: Yup.string()
+      soDT: Yup.string()
         .required("Số điện thoại không được để trống")
         .matches(
           /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
@@ -54,7 +54,7 @@ export default function Register() {
         email: values.email,
         hoTen: values.hoTen,
         matKhau: values.matKhau,
-        soDt: values.soDt,
+        soDT: values.soDT,
         taiKhoan: values.taiKhoan,
       };
       dispatch(postValueRegister(thongTinDangKy));
@@ -203,14 +203,14 @@ export default function Register() {
                   <div>
                     <label className="sr-only mt-5">Số điện thoại di động</label>
                     <input
-                      name="soDt"
+                      name="soDT"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-gray-500 focus:border-gray-500 focus:z-10 sm:text-sm"
                       placeholder="Số điện thoại di động"
                     />
-                    {formik.errors.soDt && formik.touched.soDt ? (
-                      <div className="text-red-600">{formik.errors.soDt}</div>
+                    {formik.errors.soDT && formik.touched.soDT ? (
+                      <div className="text-red-600">{formik.errors.soDT}</div>
                     ) : null}
                   </div>
                 </div>
